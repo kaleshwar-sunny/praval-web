@@ -1,8 +1,19 @@
-export default function EnterprisePage() {
+import DigitalEngineeringHero from "../digital-engineering/DigitalEngineeringHero";
+import OverviewSection from "../digital-engineering/OverviewSection";
+import ServicesStack from "../digital-engineering/ServicesStack";
+import OurEnterpriseCapabilities from "./OurEnterpriseCapabilities";
+import ReadyToGetStartedSection from "../digital-engineering/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../digital-engineering/WhyChooseUsSlider";
+
+export default function EnterprisePlatformsPage() {
   return (
-    <div>
-      <h1>Data Analytics</h1>
-      <p>Content coming soon...</p>
-    </div>
+    <>
+      <DigitalEngineeringHero bgImage={"EP"} title={"Enterprise Platforms"}/>
+      <OverviewSection service={"EP"}/>
+      <ServicesStack service={"EP"}/>
+      <OurEnterpriseCapabilities />
+      <ReadyToGetStartedSection />
+      <WhyChooseUsSlider />
+    </>
   );
 }

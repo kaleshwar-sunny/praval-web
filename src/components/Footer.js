@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-[#1a1a1a] to-[#121212] .text-primaryText">
+    <footer className="bg-gradient-to-r from-[#1a1a1a] to-[#121212] text-primaryText">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* TOP GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -52,7 +52,7 @@ export default function Footer() {
                 <p className="text-white mb-2">
                   Subscribe to our news letter
                 </p>
-                <button className=".text-primaryText bg-white px-8 py-3 rounded-md text-base font-medium" style={{cursor: "pointer", color: "#1D2833"}}>
+                <button className="text-primaryText bg-white px-8 py-3 rounded-md text-base font-medium" style={{cursor: "pointer", color: "#1D2833"}}>
                   Subscribe
                 </button>
               </div>

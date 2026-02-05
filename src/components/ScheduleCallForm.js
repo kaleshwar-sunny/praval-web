@@ -29,13 +29,13 @@ export default function ScheduleCallForm() {
               <SelectField label="Location*" />
 
                 <div className="md:col-span-2">
-                    <label className="block text-sm font-medium .text-primaryText mb-1">
+                    <label className="block text-sm font-medium text-primaryText mb-1">
                         Message*
                     </label>
                     <textarea
                         rows="2"
                         className="w-full h-12 bg-white border border-gray-400 rounded-sm px-3 py-2
-                                .text-primaryText placeholder-gray-400
+                                text-primaryText placeholder-gray-400
                                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
                                 hover:border-gray-400 transition-colors duration-150"
                     />
@@ -86,17 +86,17 @@ function Field({ label, type = "text" }) {
 function SelectField({ label, options = [] }) {
   return (
     <div>
-      <label className="block text-sm font-medium .text-primaryText mb-1">
+      <label className="block text-sm font-medium text-primaryText mb-1">
         {label}
       </label>
       <select 
         className="w-full border border-gray-400 rounded-sm px-3 py-2 
-                   .text-primaryText bg-white
+                   text-primaryText bg-white
                    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       >
-        <option value="" className=".text-primaryText">Please select</option>
+        <option value="" className="text-primaryText">Please select</option>
         {options.map((option, index) => (
-          <option key={index} value={option.value} className=".text-primaryText">
+          <option key={index} value={option.value} className="text-primaryText">
             {option.label}
           </option>
         ))}
@@ -122,7 +122,7 @@ function Step({ number, text, isLast }) {
       
       {/* Step content */}
       <div className="pb-8">
-        <p className=".text-primaryText">{text}</p>
+        <p className="text-primaryText">{text}</p>
       </div>
     </div>
   );

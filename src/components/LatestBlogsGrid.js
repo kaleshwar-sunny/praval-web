@@ -89,7 +89,7 @@ export default function LatestBlogsGrid() {
               <h3 className="text-lg font-semibold mb-2">
                 {blog.title}
               </h3>
-              <p className=".text-primaryText mb-4">
+              <p className="text-primaryText mb-4">
                 {blog.description}
               </p>
               <span className="text-blue-600 text-xl">

@@ -51,7 +51,7 @@ export default function CustomerSuccess() {
           <h2 className="text-4xl font-bold mb-4">
             Customer Success
           </h2>
-          <p className=".text-primaryText">
+          <p className="text-primaryText">
             Our superpower lies in our unwavering passion for technology and
             customer success. With approximately more than two years of
             experience in building digital engineering, data analytics and
@@ -75,10 +75,10 @@ export default function CustomerSuccess() {
                   gap-6
                 "
               >
-                <span className="text-4xl font-bold .text-primaryText">
+                <span className="text-4xl font-bold text-primaryText">
                   {item.value}
                 </span>
-                <span className=".text-primaryText">
+                <span className="text-primaryText">
                   {item.label}
                 </span>
               </div>
@@ -96,13 +96,13 @@ export default function CustomerSuccess() {
                     index === active ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <p className="text-sm md:text-lg .text-primaryText leading-relaxed mb-8">
+                  <p className="text-sm md:text-lg text-primaryText leading-relaxed mb-8">
                     <span className="text-4xl font-serif mr-2">“</span>
                     {item.text}
                     <span className="text-4xl font-serif ml-2">”</span>
                   </p>
 
-                  <p className="italic .text-primaryText">
+                  <p className="italic text-primaryText">
                     {item.author}, {item.role}
                   </p>
                 </div>

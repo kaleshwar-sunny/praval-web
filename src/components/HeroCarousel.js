@@ -70,7 +70,7 @@ export default function HeroCarousel() {
               <h1 className="text-3xl md:text-5xl font-bold mb-4">
                 {slide.title}
               </h1>
-              <p className="text-base md:text-lg mb-6 .text-primaryText">
+              <p className="text-base md:text-lg mb-6 text-white">
                 {slide.description}
               </p>
               <button

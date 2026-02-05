@@ -56,13 +56,13 @@ export default function CapabilitiesTabs() {
   const [active, setActive] = useState(tabs[0]);
 
   return (
-    <section className="py-4 md:py-10 text-left bg-gray-100">
+    <section className="py-8 md:py-10 text-left bg-gray-100">
       <div className="container mx-auto px-4">
         {/* SECTION TITLE (NEW – matches image) */}
-        <h2 className="text-5xl font-semibold mb-4">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-4">
           Our Capabilities
         </h2>
-        <p className=".text-primaryText mb-10">
+        <p className="text-primaryText mb-10">
           Praval digital engineering services are tailored to meet unique customer
           requirements. Right from improving workplace efficiency to strengthening
           governance and security, our experts are ever ready to offer the following
@@ -122,11 +122,11 @@ function TabContent({ tab }) {
     >
       {/* LEFT CONTENT */}
       <div className="animate-fadeIn text-left">
-        <h3 className="text-2xl font-bold .text-primaryText mb-6">
+        <h3 className="text-2xl font-bold text-primaryText mb-6">
           {tab.title}
         </h3>
 
-        <ul className="list-disc pl-6 space-y-3 .text-primaryText">
+        <ul className="list-disc pl-6 space-y-3 text-primaryText">
           {tab.items.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

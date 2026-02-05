@@ -63,13 +63,13 @@ export default function ServicesTabs() {
             <img
               src={tab.iconUrl}
               alt={tab.title}
-              className="h-8 w-8 md:hidden"
+              className="h-8 w-8"
             />
                   <h3 className="font-semibold text-2xl mb-2">
                     {tab.title}
                   </h3>
                   </div>
-                  <p className="text-sm text-black-600">
+                  <p className="text-base text-black-600">
                     {tab.subtitle}
                   </p>
                 </button>
@@ -111,13 +111,13 @@ function TabContent({ tab }) {
             <img
               src={tab.iconUrl}
               alt={tab.title}
-              className="h-8 w-8"
+              className="h-8 w-8 md:hidden"
             />
-            <h3 className="text-2xl font-bold .text-primaryText">
+            <h3 className="text-2xl md:text-3xl font-bold text-primaryText">
               {tab.title}
             </h3>
           </div>
-        <p className=".text-primaryText mb-6 text-left">
+        <p className="text-primaryText mb-6 text-left">
           {tab.description}
         </p>
         <button className="bg-[#0F72B1] text-white px-6 py-3 rounded-4xl md:rounded-lg hover:bg-blue-700 transition">

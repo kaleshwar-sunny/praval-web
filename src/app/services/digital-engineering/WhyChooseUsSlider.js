@@ -43,7 +43,7 @@ export default function WhyChooseUsSlider() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl md:text-4xl font-semibold .text-primaryText mb-6 md:mb-12">
+        <h2 className="text-xl md:text-4xl font-semibold text-primaryText mb-6 md:mb-12">
           Why Choose Us?
         </h2>
 
@@ -82,11 +82,11 @@ export default function WhyChooseUsSlider() {
                     <img src={slide.icon} alt="" className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-lg font-semibold .text-primaryText mb-4">
+                  <h3 className="text-lg font-semibold text-primaryText mb-4">
                     {slide.title}
                   </h3>
 
-                  <p className=".text-primaryText leading-relaxed">
+                  <p className="text-primaryText leading-relaxed">
                     {slide.text}
                   </p>
                 </div>
@@ -136,10 +136,10 @@ export default function WhyChooseUsSlider() {
         <div className="md:hidden space-y-10">
           {slides.map((slide, index) => (
             <div key={index}>
-              <h3 className="text-lg font-semibold .text-primaryText mb-2">
+              <h3 className="text-lg font-semibold text-primaryText mb-2">
                 {slide.title}
               </h3>
-              <p className=".text-primaryText leading-relaxed">
+              <p className="text-primaryText leading-relaxed">
                 {slide.text}
               </p>
             </div>

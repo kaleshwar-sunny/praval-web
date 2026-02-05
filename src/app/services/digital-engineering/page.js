@@ -8,9 +8,9 @@ import WhyChooseUsSlider from "./WhyChooseUsSlider";
 export default function DigitalEngineeringPage() {
   return (
     <>
-      <DigitalEngineeringHero />
-      <OverviewSection />
-      <ServicesStack />
+      <DigitalEngineeringHero bgImage={"DE"} title={"Digital Engineering"}/>
+      <OverviewSection service={"DE"}/>
+      <ServicesStack service={"DE"} />
       <CapabilitiesTabs />
       <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
