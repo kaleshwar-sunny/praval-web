@@ -66,9 +66,9 @@ export default function ClientLogosGrid() {
   }, []);
 
   return (
-    <section className="bg-[#f6f6f8] lg:p-20 md:p-10 p-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-left">Our Clients</h2>
+    <section className="bg-[#f6f6f8] md:p-12 p-10 px-0">
+      <div className="container mx-auto px-6">
+        <h2 className="text-lg md:text-3xl font-bold mb-10 text-left">Our Clients</h2>
 
         {/* Desktop Grid View - With white background */}
         <div

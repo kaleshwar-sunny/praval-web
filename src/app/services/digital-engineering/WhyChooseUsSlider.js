@@ -41,9 +41,9 @@ export default function WhyChooseUsSlider() {
   };
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-xl md:text-4xl font-semibold text-primaryText mb-6 md:mb-12">
+    <section className="py-8 md:py-12">
+      <div className="container mx-auto px-6">
+        <h2 className="text-lg md:text-4xl font-semibold text-primaryText mb-6 md:mb-12">
           Why Choose Us?
         </h2>
 
@@ -115,10 +115,10 @@ export default function WhyChooseUsSlider() {
 
             <button
               onClick={next}
-              disabled={active === slides.length - 1}
+              disabled={active === slides.length - 2}
               className={`w-12 h-12 rounded-full flex items-center justify-center cursor-pointer
                 ${
-                  active === slides.length - 1
+                  active === slides.length - 2
                     ? "bg-gray-200 cursor-not-allowed"
                     : "bg-[#0F72B1] text-white"
                 }`}
@@ -136,10 +136,10 @@ export default function WhyChooseUsSlider() {
         <div className="md:hidden space-y-10">
           {slides.map((slide, index) => (
             <div key={index}>
-              <h3 className="text-lg font-semibold text-primaryText mb-2">
+              <h3 className="text-base font-semibold text-primaryText mb-2">
                 {slide.title}
               </h3>
-              <p className="text-primaryText leading-relaxed">
+              <p className="text-sm text-primaryText leading-relaxed">
                 {slide.text}
               </p>
             </div>

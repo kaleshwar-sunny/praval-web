@@ -41,9 +41,9 @@ const blogs = [
 
 export default function LatestBlogsGrid() {
   return (
-    <section className="py-4 md:py-14 text-left">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">
+    <section className="pt-4 md:py-12 text-left">
+      <div className="container mx-auto p-6 pb-10 bg-[#F1F1F1] md:bg-transparent md:py-0">
+        <h2 className="text-lg md:text-4xl font-bold mb-12">
           Latest Blogs
         </h2>
 
@@ -86,15 +86,17 @@ export default function LatestBlogsGrid() {
               key={index}
               className="bg-white rounded-xl shadow-md p-6"
             >
-              <h3 className="text-lg font-semibold mb-2">
+              <h3 className="text-base font-bold mb-2">
                 {blog.title}
               </h3>
-              <p className="text-primaryText mb-4">
+              <p className="text-sm text-primaryText mb-4">
                 {blog.description}
               </p>
-              <span className="text-blue-600 text-xl">
-                →
-              </span>
+              <img
+                src="/images/rightArrowBlue.svg"
+                alt="Previous slide"
+                className="w-4 h-4"
+              />
             </div>
           ))}
         </div>

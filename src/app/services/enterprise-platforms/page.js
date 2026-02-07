@@ -4,6 +4,8 @@ import ServicesStack from "../digital-engineering/ServicesStack";
 import OurEnterpriseCapabilities from "./OurEnterpriseCapabilities";
 import ReadyToGetStartedSection from "../digital-engineering/ReadyToGetStartedSection";
 import WhyChooseUsSlider from "../digital-engineering/WhyChooseUsSlider";
+import HowItWorksSlider from "../digital-engineering/HowItWorksSlider";
+import IndustriesExpandable from "../digital-engineering/IndustriesExpandable";
 
 export default function EnterprisePlatformsPage() {
   return (
@@ -12,6 +14,8 @@ export default function EnterprisePlatformsPage() {
       <OverviewSection service={"EP"}/>
       <ServicesStack service={"EP"}/>
       <OurEnterpriseCapabilities />
+      <HowItWorksSlider />
+      <IndustriesExpandable />
       <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
     </>

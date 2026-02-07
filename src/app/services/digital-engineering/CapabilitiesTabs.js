@@ -56,13 +56,13 @@ export default function CapabilitiesTabs() {
   const [active, setActive] = useState(tabs[0]);
 
   return (
-    <section className="py-8 md:py-10 text-left bg-gray-100">
-      <div className="container mx-auto px-4">
+    <section className="py-4 md:py-12 text-left">
+      <div className="container mx-auto px-6">
         {/* SECTION TITLE (NEW – matches image) */}
-        <h2 className="text-4xl md:text-5xl font-semibold mb-4">
+        <h2 className="text-lg md:text-4xl md:text-5xl font-semibold mb-4">
           Our Capabilities
         </h2>
-        <p className="text-primaryText mb-10">
+        <p className="text-sm md:text-base text-primaryText mb-4 md:mb-10">
           Praval digital engineering services are tailored to meet unique customer
           requirements. Right from improving workplace efficiency to strengthening
           governance and security, our experts are ever ready to offer the following
@@ -83,7 +83,7 @@ export default function CapabilitiesTabs() {
                     rounded-t-xl ${isActive ? "md:rounded-t-xl" : "rounded-xl md:rounded-xl"}
                   `}
                 >
-                  <h3 className="font-semibold text-lg mb-2">
+                  <h3 className="font-semibold text-base lg:text-lg xl:text-base mb-2">
                     {tab.title}
                   </h3>
                 </button>
@@ -122,11 +122,11 @@ function TabContent({ tab }) {
     >
       {/* LEFT CONTENT */}
       <div className="animate-fadeIn text-left">
-        <h3 className="text-2xl font-bold text-primaryText mb-6">
+        <h3 className="text-base md:text-2xl font-bold text-primaryText mb-6">
           {tab.title}
         </h3>
 
-        <ul className="list-disc pl-6 space-y-3 text-primaryText">
+        <ul className="text-sm md:text-base list-disc pl-6 space-y-3 text-primaryText">
           {tab.items.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

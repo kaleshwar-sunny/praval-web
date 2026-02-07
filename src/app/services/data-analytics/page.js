@@ -4,6 +4,8 @@ import ServicesStack from "../digital-engineering/ServicesStack";
 import TechnologyFocusedExpertise from "./TechnologyFocusedExpertise";
 import ReadyToGetStartedSection from "../digital-engineering/ReadyToGetStartedSection";
 import WhyChooseUsSlider from "../digital-engineering/WhyChooseUsSlider";
+import HowItWorksSlider from "../digital-engineering/HowItWorksSlider";
+import IndustriesExpandable from "../digital-engineering/IndustriesExpandable";
 
 export default function DataAnalyticsPage() {
   return (
@@ -12,6 +14,8 @@ export default function DataAnalyticsPage() {
       <OverviewSection service={"DA"}/>
       <ServicesStack service={"DA"}/>
       <TechnologyFocusedExpertise />
+      <HowItWorksSlider />
+      <IndustriesExpandable />
       <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
     </>

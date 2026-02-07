@@ -40,7 +40,7 @@ export default function ServicesStack({ service = "DE" }) {
         {
           title: "Implementation",
           description:
-            "From design to deployment, we provide end-to-end implementation solutions customized to your unique requirements. Our expertise ensures a seamless transition from concept to execution, delivering systems that are built to last.",
+            "From design to deployment, we provide end-to-end implementation solutions customized to your unique requirements. Our expertise ensures a seamless transition from concept to execution.",
           link: "/services/azure-migration",
         },
         {
@@ -68,12 +68,12 @@ export default function ServicesStack({ service = "DE" }) {
   const isEP = service === "EP";
 
   return (
-    <section className="md:py-24 py-8 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+    <section className={`${isEP ? '' : 'md:py-12 pt-4'} bg-white`}>
+      <div className="container mx-auto p-6 pb-10 bg-[#F1F1F1] md:bg-transparent md:py-0">
+        <div className={`${isEP ? '' : 'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-20 items-start'}`}>
 
-          <div className="lg:sticky lg:top-32 h-fit">
-            <h2 className="text-4xl md:text-5xl font-semibold text-primaryText md:pt-10">
+          <div className={`${isEP ? '' : 'lg:sticky lg:top-32 h-fit'}`}>
+            <h2 className={`text-lg md:text-5xl font-semibold text-primaryText ${isEP ? '' : 'md:pt-10'}`}>
               Our Services
             </h2>
           </div>
@@ -84,7 +84,7 @@ export default function ServicesStack({ service = "DE" }) {
               if (isEP) {
                 return (
                   <div key={index} className="text-primaryText">
-                    <p className="leading-relaxed text-lg">
+                    <p className="leading-relaxed text-lg py-4">
                       {item.description}
                     </p>
                   </div>
@@ -102,18 +102,18 @@ export default function ServicesStack({ service = "DE" }) {
                     lg:sticky
                     transition-all
                     md:pb-20
-                    md:pr-50
+                    md:pr-25
                   "
                   style={{
                     top: "120px",
                     zIndex: index + 1,
                   }}
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-primaryText">
+                  <h3 className="text-base md:text-lg font-semibold mb-4 text-primaryText">
                     {item.title}
                   </h3>
 
-                  <p className="leading-relaxed mb-6 text-primaryText">
+                  <p className="text-sm md:text-base lg:text-sm xl:text-base leading-relaxed mb-6 text-primaryText">
                     {item.description}
                   </p>
 
@@ -122,7 +122,12 @@ export default function ServicesStack({ service = "DE" }) {
                     className="inline-flex items-center gap-2 font-medium"
                     style={{ color: "#0F72B1" }}
                   >
-                    Read More →
+                    Read More
+                    <img
+                      src="/images/rightArrowBlue.svg"
+                      alt="Previous slide"
+                      className="w-4 h-4"
+                    />
                   </a>
                 </div>
               )

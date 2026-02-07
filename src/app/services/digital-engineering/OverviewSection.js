@@ -8,15 +8,15 @@ export default function OverviewSection({service = ""}) {
 
   const serviceContent = contentMap[service];
   return (
-    <section className="py-10">
+    <section className="pt-8 md:pt-0 md:pb-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
+        <div>
           
-          <h2 className="text-4xl md:text-5xl font-semibold text-primaryText">
+          <h2 className="text-lg md:text-4xl md:text-5xl font-semibold text-primaryText">
             Overview
           </h2>
 
-          <p className="text-base leading-relaxed text-primaryText max-w-3xl">
+          <p className="text-sm md:text-base leading-relaxed text-primaryText py-4">
             {serviceContent}
           </p>
 

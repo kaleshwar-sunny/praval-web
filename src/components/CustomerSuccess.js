@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const stats = [
   { value: "15+", label: "Industries Served" },
@@ -34,18 +34,36 @@ const testimonials = [
 
 export default function CustomerSuccess() {
   const [active, setActive] = useState(0);
+  const intervalRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  // Function to start the auto-scroll
+  const startAutoScroll = () => {
+    intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % testimonials.length);
     }, 2000);
+  };
 
-    return () => clearInterval(timer);
+  // Function to stop the auto-scroll
+  const stopAutoScroll = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    // Start auto-scroll on component mount
+    startAutoScroll();
+
+    // Cleanup on component unmount
+    return () => {
+      stopAutoScroll();
+    };
   }, []);
 
   return (
-    <section className="py-8 md:py-14 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="hidden md:block py-8 md:py-12 bg-white">
+      <div className="container mx-auto px-6">
         {/* Header */}
         <div className="mb-16 text-left">
           <h2 className="text-4xl font-bold mb-4">
@@ -85,32 +103,42 @@ export default function CustomerSuccess() {
             ))}
           </div>
 
-          {/* RIGHT: Testimonial Carousel */}
-          <div className="relative bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] p-10">
-            {/* Quote */}
-            <div className="relative min-h-[360px] md:min-h-[260px]">
-              {testimonials.map((item, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-500 ${
-                    index === active ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <p className="text-sm md:text-lg text-primaryText leading-relaxed mb-8">
-                    <span className="text-4xl font-serif mr-2">“</span>
-                    {item.text}
-                    <span className="text-4xl font-serif ml-2">”</span>
-                  </p>
-
-                  <p className="italic text-primaryText">
-                    {item.author}, {item.role}
-                  </p>
-                </div>
-              ))}
+          <div>
+            {/* Testimonial Carousel */}
+            <div 
+              className="relative bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] p-10 pb-14 lg:pt-0 xl:p-10"
+              onMouseEnter={stopAutoScroll}  // Stop on hover
+              onMouseLeave={startAutoScroll}  // Restart when mouse leaves
+            >
+              <div className="relative min-h-[360px] md:min-h-[260px]">
+                {testimonials.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-500 ${
+                      index === active ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <div>
+                      <div className="text-3xl md:text-4xl font-bold text-primaryText text-left relative top-5 -left-6">"</div>
+                      <p className="text-sm md:text-base lg:text-sm text-primaryText leading-relaxed break-words text-left">
+                        {item.text}
+                      </p>
+                    </div>
+                    <div className="text-3xl md:text-4xl font-bold text-primaryText text-right relative bottom-5 -right-6">"</div>
+                      <p className="italic text-primaryText">
+                        {item.author}, {item.role}
+                      </p>
+                  </div>
+                ))}
+              </div>
             </div>
-
+            
             {/* Dots */}
-            <div className="flex gap-3 mt-10 justify-center">
+            <div 
+              className="flex gap-3 mt-4 justify-center"
+              onMouseEnter={stopAutoScroll}
+              onMouseLeave={startAutoScroll}
+            >
               {testimonials.map((_, index) => (
                 <button
                   key={index}

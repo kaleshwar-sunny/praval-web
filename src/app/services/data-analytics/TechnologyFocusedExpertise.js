@@ -35,13 +35,13 @@ const cards = [
 
 export default function TechnologyFocusedExpertise() {
   return (
-    <section className="py-8 md:py-20 bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 md:gap-16 items-start">
           
           {/* LEFT: TITLE */}
           <div className="lg:sticky lg:top-32">
-            <h2 className="text-4xl md:text-5xl font-semibold text-primaryText leading-tight">
+            <h2 className="text-lg md:text-5xl font-semibold text-primaryText leading-tight">
               Technology Focused Expertise:
               <br />
               Leading the way with Innovation
@@ -61,7 +61,7 @@ export default function TechnologyFocusedExpertise() {
                   p-8 md:pb-12
                 "
               >
-                <h3 className="text-lg font-semibold mb-3 text-primaryText">
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-primaryText">
                   {card.title}
                 </h3>
 
@@ -74,7 +74,12 @@ export default function TechnologyFocusedExpertise() {
                   className="inline-flex items-center gap-2 font-medium"
                   style={{ color: "#0F72B1" }}
                 >
-                  Read More →
+                  Read More 
+                  <img
+                    src="/images/rightArrowBlue.svg"
+                    alt="Previous slide"
+                    className="w-4 h-4"
+                  />
                 </a>
               </div>
             ))}

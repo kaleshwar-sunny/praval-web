@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
 
-      <section className="pb-4 md:pb-14 text-center">
+      <section className="pb-4 md:pb-4 text-center">
         <HeroCarousel />
         <ServicesTabs />
         <ClientLogosGrid />

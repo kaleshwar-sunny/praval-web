@@ -58,9 +58,9 @@ export default function LatestInsightsCarousel() {
   };
 
   return (
-    <section className="py-14 overflow-hidden container mx-auto text-left">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">Latest Insights</h2>
+    <section className="py-4 md:py-12 overflow-hidden container mx-auto text-left">
+      <div className="container mx-auto px-6">
+        <h2 className="text-lg md:text-4xl font-bold mb-12">Latest Insights</h2>
 
         {/* Carousel */}
         <div className="relative h-[460px] text-left">
@@ -83,7 +83,7 @@ export default function LatestInsightsCarousel() {
 
             if (index === prevIndex) {
               position +=
-                " md:-left-[8%] md:w-[60%] md:z-10 md:opacity-100 md:pointer-events-auto";
+                " md:-left-[1%] md:w-[60%] md:z-10 md:opacity-100 md:pointer-events-auto";
             }
 
             return (
@@ -160,14 +160,19 @@ function SlideCard({ slide, active }) {
       <div className="relative z-10 h-full p-6 md:p-10 flex flex-col md:flex-row">
         {/* Left Text */}
         <div className="md:w-2/3 text-white md:pr-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-4 leading-snug">
+          <h3 className="text-xl md:text-2xl font-medium mb-4 leading-snug">
             {slide.title}
           </h3>
           <p className="text-white mb-6 leading-relaxed text-sm md:text-base">
             {slide.description}
           </p>
-          <span className="inline-flex items-center gap-2 text-white">
-            Read More →
+          <span className="inline-flex items-center gap-2 text-white cursor-pointer">
+            Read More
+          <img
+            src="/images/rightArrow.svg"
+            alt="Previous slide"
+            className="w-4 h-4"
+          />
           </span>
         </div>
 
@@ -178,7 +183,7 @@ function SlideCard({ slide, active }) {
               key={i}
               className="bg-white rounded-xl p-5 shadow"
             >
-              <p className="text-2xl font-bold" style={{color: "#0F72B1"}}>
+              <p className="text-2xl font-semibold" style={{color: "#0F72B1"}}>
                 {stat.value}
               </p>
               <p className="text-sm text-primaryText">

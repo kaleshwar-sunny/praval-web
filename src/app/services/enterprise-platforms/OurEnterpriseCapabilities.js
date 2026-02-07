@@ -40,19 +40,24 @@ export default function OurEnterpriseCapabilities() {
   ];
 
   return (
-    <section className="py-8 pb-18 md:py-20  bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <h2 className="text-4xl md:text-5xl font-semibold mb-12 text-primaryText">
+        <h2 className="text-lg md:text-5xl font-semibold mb-4 md:mb-12 text-primaryText">
           Our Capabilities
         </h2>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {capabilities.map((item, index) => (
+        {capabilities.map((item, index) => {
+          const isLastItem = index === capabilities.length - 1;
+          const itemsInLastRow = capabilities.length % 3;
+          const isSingleInLastRow = isLastItem && itemsInLastRow === 1;
+          
+          return (
             <div
               key={index}
-              className="
+              className={`
                 bg-white
                 rounded-2xl
                 p-8
@@ -60,18 +65,20 @@ export default function OurEnterpriseCapabilities() {
                 transition-transform
                 hover:-translate-y-1
                 md:pb-16
-              "
+                ${isSingleInLastRow ? 'lg:col-start-2' : ''}
+              `}
             >
-              <h3 className="text-xl font-semibold mb-4 text-primaryText">
+              <h3 className="text-base md:text-xl font-semibold mb-4 text-primaryText">
                 {item.title}
               </h3>
 
-              <p className="leading-relaxed text-primaryText">
+              <p className="text-sm md:text-base leading-relaxed text-primaryText">
                 {item.description}
               </p>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
       </div>
     </section>
   );

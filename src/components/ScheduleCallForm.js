@@ -5,21 +5,19 @@ export default function ScheduleCallForm() {
     <section className="relative mt-12 md:mt-0 py-12 text-left">
       {/* FULL BACKGROUND IMAGE */}
       <div
-    className="absolute bg-black top-0 left-0 w-full h-1/2 bg-cover bg-center"
-    style={{ backgroundImage: "url('/images/scheduleCall.png')" }}
+    className="absolute bg-black top-0 left-0 w-full h-1/2 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/images/scheduleCall.png')"}}
     />
       <div className="absolute top-0 left-0 w-full h-1/2 bg-black/40 pointer-events-none" />
 
-      <div className="relative container mx-auto px-4 mt-24">
-        <div className="bg-[#F6F6F6] rounded-lg border border-[#F6F6F6]
-      max-w-5xl w-full mx-auto p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* FORM */}
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-semibold mb-2">
+      <div className="relative container mx-auto px-6">
+        <h2 className="text-base md:text-4xl font-bold mb-4 md:mb-12 text-white text-center">
               Schedule a call with our team today
             </h2>
-            <div className="w-14 h-1 bg-[#0F72B1] mb-6" />
-
+        <div className="bg-[#F6F6F6] rounded-lg border border-[#F6F6F6]
+      max-w-8xl w-full mx-auto p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* FORM */}
+          <div className="lg:col-span-2">
             <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Field label="Name*" />
               <Field label="Email*" type="email" />

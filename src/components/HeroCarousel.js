@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 const slides = [
@@ -29,7 +29,12 @@ const slides = [
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const router = useRouter();
+  const sectionRef = useRef(null);
+
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -49,8 +54,49 @@ export default function HeroCarousel() {
     );
   };
 
+  const scrollToNextSection = () => {
+    const viewportHeight = window.innerHeight;
+    
+    window.scrollTo({
+      top: viewportHeight - 50,
+      behavior: 'smooth'
+    });
+  };
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
-    <section className="relative md:block h-[85vh] overflow-hidden text-left">
+    <section 
+      ref={sectionRef}
+      className="relative md:block h-[85vh] overflow-hidden text-left"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -93,7 +139,7 @@ export default function HeroCarousel() {
             className={`h-[2px] transition-all duration-300 ${
             index === current
                 ? "md:w-24 w-14 bg-white"
-                : "md:w-26  w-16 bg-white/50 hover:bg-white"
+                : "md:w-26 w-16 bg-white/50 hover:bg-white"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -104,18 +150,31 @@ export default function HeroCarousel() {
         <button
           onClick={prevSlide}
           className="w-10 h-10 rounded-full border border-white text-white flex items-center justify-center hover:bg-white hover:text-black transition"
+          aria-label="Previous slide"
         >
           ‹
         </button>
         <button
           onClick={nextSlide}
           className="w-10 h-10 rounded-full border border-white text-white flex items-center justify-center hover:bg-white hover:text-black transition"
+          aria-label="Next slide"
         >
           ›
         </button>
       </div>
 
-      <div className="max-sm:block hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+      <div 
+        className="max-sm:block hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+        onClick={scrollToNextSection}
+        role="button"
+        tabIndex={0}
+        aria-label="Scroll down to next section"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            scrollToNextSection();
+          }
+        }}
+      >
         <img
           src="/images/downArrow.svg"
           alt="Scroll down"

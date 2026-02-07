@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 export default function DigitalEngineeringHero({bgImage, title}) {
 
   const imageMap = {
-    "DE": "/images/digitalEngineeringHero.png",
-    "DA": "/images/dataAnalyticsHero.png",
-    "EP": "/images/enterprisePlatformHero.png",
+    "DE": "/images/homeCarousel1.png",
+    "DA": "/images/homeCarousel2.png",
+    "EP": "/images/homeCarousel3.png",
   };
 
   const imagePath = imageMap[bgImage];

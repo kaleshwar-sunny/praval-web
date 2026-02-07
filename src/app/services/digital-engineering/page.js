@@ -4,6 +4,8 @@ import ServicesStack from "./ServicesStack";
 import CapabilitiesTabs from "./CapabilitiesTabs";
 import ReadyToGetStartedSection from "./ReadyToGetStartedSection";
 import WhyChooseUsSlider from "./WhyChooseUsSlider";
+import HowItWorksSlider from "./HowItWorksSlider";
+import IndustriesExpandable from "./IndustriesExpandable";
 
 export default function DigitalEngineeringPage() {
   return (
@@ -12,6 +14,8 @@ export default function DigitalEngineeringPage() {
       <OverviewSection service={"DE"}/>
       <ServicesStack service={"DE"} />
       <CapabilitiesTabs />
+      <HowItWorksSlider />
+      <IndustriesExpandable />
       <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
     </>

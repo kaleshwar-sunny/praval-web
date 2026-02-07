@@ -24,7 +24,7 @@ export default function ReadyToGetStartedSection() {
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-6 md:px-12">
             <div className="flex items-center gap-6">
-              <h2 className="text-white text-3xl md:text-4xl font-light">
+              <h2 className="text-white text-lg md:text-4xl font-medium md:font-light">
                 Ready to get started
               </h2>
 
