@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ServicesStack({ service = "DE" }) {
   const SERVICES_MAP = {
     DE: {
@@ -6,25 +8,25 @@ export default function ServicesStack({ service = "DE" }) {
           title: "Digital Workplace Solutions",
           description:
             "Globally, with the emergence of new work patterns post COVID-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
-          link: "/services/digital-workplace",
+          link: "/services/digital-engineering/application-development",
         },
         {
           title: "Low Code No Code Services",
           description:
             "Demand for faster development and delivery of solutions is ever scaling. The typical traditional application development can be tedious and resource intensive with frequent bottle necks.",
-          link: "/services/process-automation",
+          link: "/services/digital-engineering/low-code",
         },
         {
           title: "Azure Services",
           description:
             "Praval is your go to partner for Azure consulting services. Our Azure certified experts help businesses leverage the full potential of Microsoft Azure.",
-          link: "/services/governance-security",
+          link: "/services/digital-engineering/azure",
         },
         {
           title: "Cloud Migration Services",
           description:
             "Most businesses have come to realize that they are losing out by holding on to legacy systems that come with high costs and complicated compliance.",
-          link: "/services/low-code",
+          link: "/services/digital-engineering/low-code",
         },
       ],
     },
@@ -35,19 +37,19 @@ export default function ServicesStack({ service = "DE" }) {
           title: "Strategy Consulting",
           description:
             "Your business dreams deserve more than just plans; they need actionable strategies that drive results. With our strategy consulting, we analyze your data ambitions, align them with your organizational goals, and create a roadmap to success.",
-          link: "/services/azure-consulting",
+          link: "/services/data-analytics/strategy-consulting",
         },
         {
           title: "Implementation",
           description:
             "From design to deployment, we provide end-to-end implementation solutions customized to your unique requirements. Our expertise ensures a seamless transition from concept to execution.",
-          link: "/services/azure-migration",
+          link: "/services/data-analytics/implementation",
         },
         {
           title: "Managed Services",
           description:
             "Running a business means prioritizing growth, not grappling with technical challenges. With our managed services, we take care of your data environment so you can focus on scaling your operations.",
-          link: "/services/azure-devops",
+          link: "/services/data-analytics/managed-services",
         },
       ],
     },
@@ -117,7 +119,7 @@ export default function ServicesStack({ service = "DE" }) {
                     {item.description}
                   </p>
 
-                  <a
+                  <Link
                     href={item.link}
                     className="inline-flex items-center gap-2 font-medium"
                     style={{ color: "#0F72B1" }}
@@ -128,7 +130,7 @@ export default function ServicesStack({ service = "DE" }) {
                       alt="Previous slide"
                       className="w-4 h-4"
                     />
-                  </a>
+                  </Link>
                 </div>
               )
             })}

@@ -9,7 +9,6 @@ import ScheduleCallForm from "@/components/ScheduleCallForm";
 export default function Home() {
   return (
     <>
-
       <section className="pb-4 md:pb-4 text-center">
         <HeroCarousel />
         <ServicesTabs />

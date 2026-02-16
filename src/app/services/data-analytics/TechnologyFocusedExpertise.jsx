@@ -1,35 +1,43 @@
 "use client";
 
+import Link from "next/link";
+
 const cards = [
   {
     title: "Cloud Modernization",
     description:
       "Migrating to the cloud is no longer an option; it’s a necessity for competitive businesses. We simplify the process, modernizing your infrastructure for optimal performance and agility.",
+    link: "/services/data-analytics/cloud-modernization", 
   },
   {
     title: "AI & ML",
     description:
       "Data is more than numbers; it’s the key to transformative decisions. Our expertise in data science and artificial intelligence enables us to turn your raw data into actionable insights.",
+    link: "/services/data-analytics/ai-ml",
   },
   {
     title: "Real-Time Analytics",
     description:
       "In a fast-paced world, decisions can’t wait. Our real-time analytics solutions ensure you stay ahead of the curve by providing minute-by-minute insights.",
+    link: "/services/data-analytics/realtime-analytics",
   },
   {
     title: "Data Visualization",
     description:
       "Complex data can be overwhelming, but it doesn’t have to be. We transform your raw data into compelling visuals that tell a story.",
+    link: "/services/data-analytics/data-visualization",
   },
   {
     title: "Modern Data Platforms & Warehouses",
     description:
       "Your business deserves a data platform that evolves with your needs. Our modern data solutions are intelligent, scalable, and future-ready.",
+    link: "/services/data-analytics/mdp-warehouses",
   },
   {
     title: "Data Governance",
     description:
       "Data integrity isn’t optional—it’s essential. Our data governance solutions ensure your data is reliable, secure, and ready for decision-making.",
+    link: "/services/data-analytics/data-governance",
   },
 ];
 
@@ -69,8 +77,8 @@ export default function TechnologyFocusedExpertise() {
                   {card.description}
                 </p>
 
-                <a
-                  href="#"
+                <Link
+                  href={card.link}
                   className="inline-flex items-center gap-2 font-medium"
                   style={{ color: "#0F72B1" }}
                 >
@@ -80,7 +88,7 @@ export default function TechnologyFocusedExpertise() {
                     alt="Previous slide"
                     className="w-4 h-4"
                   />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
