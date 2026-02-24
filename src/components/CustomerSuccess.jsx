@@ -3,27 +3,27 @@
 import { useState, useEffect, useRef } from "react";
 
 const stats = [
-  { value: "15+", label: "Industries Served" },
-  { value: "98+", label: "Completed Projects" },
-  { value: "100%", label: "Customers Satisfaction" },
-  { value: "150+", label: "Customers Served" },
+  { value: "15+", label: "Industries Served", subLabel: "Diverse sectors we’ve partnered" },
+  { value: "98+", label: "Completed Projects", subLabel: "Delivered. Without exception" },
+  { value: "100%", label: "Customers Satisfaction", subLabel: "Clients who stayed came back" },
+  { value: "150+", label: "Customers Served", subLabel: "Relationships, not transactions" },
 ];
 
 const testimonials = [
   {
-    text: `Do you have any SharePoint migration need? Praval Migrator is exactly what your business has been searching for. Praval Migrator is great tool for everyone, who would like to get good results in reasonable time with report similar to the other products. Not only that – you can (similar to some other products) select PowerShell to be able to a) use templates with Praval commandlets and b) automate migration using PowerShell actions inside other workflows.`,
+    text: `Praval Migrator is exactly what your business has been searching for.`,
     author: "Roman Nedzelsky",
-    role: "Microsoft MVP",
+    role: "Microsoft MVP SharePoint consulting & M365 migration",
   },
   {
-    text: `Praval Migrator is great tool for everyone, who would like to get good results in reasonable time with report similar to the other products.`,
+    text: `Our employees have access to the right information and file work reports on time.`,
     author: "Ramadji Domunande",
-    role: "IT Operations & Security",
+    role: "Sr. Director, IT Operations · Microsoft 365 migration",
   },
   {
-    text: `With the Intranet portal built by Praval, our employees, and members have access to the right information and file work reports on-time, boosting the overall productivity and accountability.`,
-    author: "Ramadji Domunande",
-    role: "IT Operations & Security",
+    text: `Loved working with Team Praval. Our employees are happier than ever.`,
+    author: "Stephanie Melilli",
+    role: "Enterprise Communications",
   },
   {
     text: `Team Praval delivers! Our employees are more engaged and happier than ever with the Praval Intranet Suite.`,
@@ -78,9 +78,9 @@ export default function CustomerSuccess() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[2.5fr_1.5fr] gap-12 items-start">
           {/* LEFT: Stats Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 md:mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -93,12 +93,19 @@ export default function CustomerSuccess() {
                   gap-6
                 "
               >
-                <span className="text-4xl font-bold text-primaryText">
+                <span className="text-4xl font-semibold text-primaryText">
                   {item.value}
                 </span>
-                <span className="text-primaryText">
-                  {item.label}
-                </span>
+                <div className="text-left">
+                  <span className="text-primaryText block">
+                    {item.label}
+                  </span>
+                  {item.subLabel && (
+                    <span className="text-xs text-primaryText block">
+                      {item.subLabel}
+                    </span>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -106,11 +113,11 @@ export default function CustomerSuccess() {
           <div>
             {/* Testimonial Carousel */}
             <div 
-              className="relative bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] p-10 pb-14 lg:pt-0 xl:p-10"
+              className="relative bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] px-10"
               onMouseEnter={stopAutoScroll}  // Stop on hover
               onMouseLeave={startAutoScroll}  // Restart when mouse leaves
             >
-              <div className="relative min-h-[360px] md:min-h-[260px]">
+              <div className="relative min-h-[360px] md:min-h-[230px]">
                 {testimonials.map((item, index) => (
                   <div
                     key={index}
@@ -124,10 +131,15 @@ export default function CustomerSuccess() {
                         {item.text}
                       </p>
                     </div>
-                    <div className="text-3xl md:text-4xl font-bold text-primaryText text-right relative bottom-5 -right-6">"</div>
-                      <p className="italic text-primaryText">
-                        {item.author}, {item.role}
+                      <div className="text-3xl md:text-4xl font-bold text-primaryText text-right relative bottom-5 -right-6">"</div>
+                      <>
+                      <p className="italic font-bold text-primaryText text-left">
+                        {item.author}
                       </p>
+                      <p className="italic text-sm text-primaryText text-left">
+                        {item.role}
+                      </p>
+                      </>
                   </div>
                 ))}
               </div>

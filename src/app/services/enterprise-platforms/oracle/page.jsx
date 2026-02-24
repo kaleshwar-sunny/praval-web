@@ -3,16 +3,13 @@ import OverviewSection from "../../digital-engineering/OverviewSection";
 import StrategyAccordion from "../../digital-engineering/StrategyAccordion";
 import ReadyToGetStartedSection from "../../digital-engineering/ReadyToGetStartedSection";
 import WhyChooseUsSlider from "../../digital-engineering/WhyChooseUsSlider";
-import BenefitsHoverSection from "../BenefitsHoverSection";
 
-export default function dataGovernancePage() {
+export default function OraclePage() {
   return (
     <>
-      <DigitalEngineeringHero bgImage={"DG"} title={"Data Governance"}/>
-      <OverviewSection service={"DG"}/>
-      <StrategyAccordion service={"DG"} />
-      <div className="my-6"></div>
-      <BenefitsHoverSection />
+      <DigitalEngineeringHero bgImage={"OR"} title={"Oracle"}/>
+      <OverviewSection service={"OR"}/>
+      <StrategyAccordion service={"OR"} />
       <div className="my-6"></div>
       <ReadyToGetStartedSection />
       <WhyChooseUsSlider />

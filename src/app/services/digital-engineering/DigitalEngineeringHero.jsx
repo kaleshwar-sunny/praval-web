@@ -20,6 +20,17 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "DV": "/images/dataVisualizationHero.jpg",
     "MDP": "/images/latestInsights2.png",
     "DG": "/images/applicationDevelopmentHero.png",
+    "OR": "/images/oracleHero.jpg",
+    "SF": "/images/azureHero.jpg",
+    "SSC": "/images/lowCodeHero.jpg",
+    "SFSC": "/images/enterprisePlatformHero.png",
+    "SMC": "/images/dataVisualizationHero.jpg",
+    "SCC": "/images/dataAnalyticsHero.png",
+    "SDC": "/images/applicationDevelopmentHero.png",
+    "ML": "/images/applicationDevelopmentHero.png",
+    "AA": "/images/analyticsAiHero.jpg",
+    "SN": "/images/servicenowHero.jpg",
+    "GS": "/images/lowCodeHero.jpg",
   };
 
   const imagePath = imageMap[bgImage];

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#1a1a1a] to-[#121212] text-primaryText">
@@ -74,9 +76,15 @@ export default function Footer() {
             {/* Resources */}
             <h4 className="text-white text-base md:text-lg mb-4">Resources</h4>
             <div className="grid grid-cols-3 gap-y-4 text-sm md:text-base font-light" style={{color: "#FFFFFF"}}>
-              <p>About us</p>
-              <p>Careers</p>
-              <p>Blogs</p>
+              <Link href="/about" className="hover:underline transition">
+                About us
+              </Link>
+              <Link href="/careers" className="hover:underline transition">
+                Careers
+              </Link>
+              <Link href="/blogs" className="hover:underline transition">
+                Blogs
+              </Link>
             </div>
 
             {/* Get in touch (MOVED HERE) */}

@@ -184,7 +184,7 @@ const SERVICES_MAP = {
           {
             title: "Data Strategy Development",
             content:
-              "Your data is one of your most valuable assets, but are you leveraging it effectively? Our data strategy development services offer a comprehensive evaluation of your current data landscape. We analyze your data sources, infrastructure, and workflows to identify gaps and opportunities.",
+              `A strategy is only as good as the decisions it changes.\nNot the document. The outcome.\nGood data strategy consulting improves business intelligence, the actual decisions your team makes. If nothing changed six months after sign-off, the strategy failed. That's the only standard worth holding it to.`,
             bullets: [
               "In-depth data assessment tailored to your business needs",
               "Strategies to simplify data management and optimize resources",
@@ -195,7 +195,7 @@ const SERVICES_MAP = {
           {
             title: "Actionable Insights",
             content:
-              "Data without insights is just numbers. We transform complex data into actionable insights that drive decision-making and maximize ROI. Through advanced analytics and innovative tools, we provide recommendations that fuel growth and efficiency.",
+              `Most strategies fail between sign-off and Monday morning.\nThe gap nobody plans for.\nThe blueprint was sound. The presentation was persuasive. But the team didn't change how they worked. Any enterprise data solutions provider worth the name designs for that gap. Not around it.`,
             bullets: [
               "Custom analytics models tailored for your business​",
               "Identifying high-impact opportunities for revenue growth​",
@@ -206,7 +206,7 @@ const SERVICES_MAP = {
           {
             title: "Performance Tracking​",
             content:
-              "Implementing a strategy is only the first step; monitoring its success is crucial. Our performance tracking services ensure that you’re always on the path to success. We establish clear metrics and KPIs to measure outcomes, providing you with real-time insights into the effectiveness of our strategies.",
+              `The brief tells us what strategy you want.\nThe first meeting tells us what you actually need.\nReal technology consulting services notice that gap early and say so. These are rarely the same conversation. The most useful thing a strategy partner can do is name the difference before the work begins.`,
             bullets: [
               "Continuous monitoring for optimal results​",
               "Dynamic adjustments to strategies based on performance data​",
@@ -223,7 +223,7 @@ const SERVICES_MAP = {
           {
             title: "System Architecture",
             content:
-              "A strong foundation is essential for any successful project. Our team of experts designs system architectures that prioritize:",
+              `Built to last. Not built to impress.\nGood enterprise cloud transformation starts with architecture that still makes sense eighteen months later when the team who built it has moved on.`,
             bullets: [
               "Solutions that grow with your business",
               "Robust measures to protect your data and assets",
@@ -235,7 +235,7 @@ const SERVICES_MAP = {
           {
             title: "Custom Development: Tailored To Your Unique Needs",
             content:
-              "No two businesses are alike, and neither are our solutions. We offer:",
+              `Your business. Not the last client's template.\nEvery business has edges that off-the-shelf doesn't reach. That's where modern data platform solutions and sharp data warehouse consulting earn their place in the gaps between what the platform does and what the business needs.`,
             bullets: [
               "Applications to solve your business challenges​",
               "Adding capabilities to existing platforms for better functionality​",
@@ -247,7 +247,7 @@ const SERVICES_MAP = {
           {
             title: "Development & Integration : Ensuring A Smooth Transition​",
             content:
-              "Deploying a new system or solution can be complex, but not with us. We focus on:",
+              `The seams are where projects go wrong.\nWhether it's cloud migration solutions, AWS data migration, or Azure cloud migration most implementations fail where systems meet. Not because the systems are wrong. Because the integration wasn't treated as seriously as the build.`,
             bullets: [
               "Ensuring minimal disruption to your workflow​",
               "Making sure your new system integrates seamlessly with existing tools and platforms​",
@@ -536,6 +536,74 @@ const SERVICES_MAP = {
           },
         ]
     },
+    OR: {
+      header: "",
+      subject: "",
+        sections: [
+        {
+          title: "Oracle Analytics Cloud",
+          content:
+            "Our Oracle Analytics Cloud (OAC) implementation consultants help businesses harness structured and unstructured data to drive growth through informed decisions, optimized processes, and enhanced customer satisfaction.",
+          bullets: [
+            "Analytics roadmaps",
+            "Analytics design",
+            "OAC implementation",
+            "Essbase analytics",
+          ],
+          image: "/images/oracle-accordion-1.jpg",
+        },
+        {
+          title: "Oracle Enterprise Performance Management Cloud",
+          content:
+            "Oracle Managed services guarantee that Oracle environments are safe, effective, and economical by offering continuous support and maintenance.",
+          bullets: [
+            "Enterprise performance reporting cloud​",
+            "Enterprise planning and budgeting cloud​",
+            "Financial consolidation and close",
+            "Profitability and cost management cloud",
+            "Strategic workforce planning",
+          ],
+          image: "/images/automated.jpg",
+        },
+        {
+          title: "Oracle ERP Cloud​",
+          content:
+            "We help finance leaders navigate challenges and achieve optimal financial outcomes. Our proven methods combine traditional principles with agile techniques for effective ERP Cloud implementations.",
+          bullets: [
+            "Financials cloud​",
+            "Project portfolio management cloud​",
+            "Risk management cloud",
+            "Procurement cloud",
+          ],
+          image: "/images/businessApps.jpg",
+        },
+        {
+          title: "Procurement cloud",
+          content:
+            "Modern HR systems are essential for business success. We help clients enhance their HR strategies, processes, and technology to manage the end-to-end talent lifecycle effectively.",
+          bullets: [
+            "End-to-End Oracle HCM Cloud",
+            "HCM Cloud governance and management tools​",
+            "HCM Cloud assessments and optimization",
+            "Oracle Strategic Workforce Planning Cloud",
+            "Oracle Workforce Health & Safety Solution",
+          ],
+          image: "/images/oracle-accordion-3.jpg",
+        },
+        {
+          title: "Oracle Supply Chain Management (SCM) Cloud​",
+          content:
+            "Seamlessly transition from on-premises or existing cloud environments to Azure, minimizing disruptions and optimizing resources.",
+          bullets: [
+            "Supply chain cloud",
+            "Cloud assessments and optimization",
+            "Roadmap and transformation plan",
+            "Process improvement, global rollout",
+          ],
+          image: "/images/oracle-accordion-2.jpg",
+        },
+      ]
+    },
 }
 
 export default function StrategyAccordion({ service = "AD" }) {
@@ -600,7 +668,7 @@ export default function StrategyAccordion({ service = "AD" }) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
                     <div className="md:justify-self-start md:ml-0 text-white/80">
-                      <p className="mb-6 text-sm md:text-base">
+                      <p className="mb-6 text-sm md:text-base whitespace-pre-line">
                         {section.content}
                       </p>
 

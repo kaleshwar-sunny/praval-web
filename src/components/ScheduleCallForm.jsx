@@ -11,7 +11,7 @@ export default function ScheduleCallForm() {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-black/40 pointer-events-none" />
 
       <div className="relative container mx-auto px-6">
-        <h2 className="text-base md:text-4xl font-bold mb-4 md:mb-12 text-white text-center">
+            <h2 className="text-base md:text-4xl font-bold mb-4 md:mb-12 text-white text-center">
               Schedule a call with our team today
             </h2>
         <div className="bg-[#F6F6F6] rounded-lg border border-[#F6F6F6]
