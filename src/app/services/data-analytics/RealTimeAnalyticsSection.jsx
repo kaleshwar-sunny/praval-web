@@ -1,22 +1,47 @@
-export default function RealTimeAnalyticsSection() {
-  const topCards = [
-    {
-      title: "Enhanced Customer Experiences",
-      desc: "Leverage real-time data to deliver personalized experiences by understanding customer preferences, anticipating their needs, and offering tailored solutions.",
+export default function RealTimeAnalyticsSection({ service = "default" }) {
+
+   const SERVICES_MAP = {
+    QE: {
+      topCards: [
+        {
+          title: "Scalable | Intelligent | Built for Speed",
+          desc: "At Praval, we offer advanced quality Engineering solutions that are designed to accelerate your testing processes, improve accuracy, and seamlessly integrate with modern development practices.",
+        },
+        {
+          title: "Praval Continuous Testing Framework",
+          desc: "A robust solution that enables continuous testing across the software delivery lifecycle. It integrates with CI/CD pipelines to provide instant feedback on code quality, functionality, and performance — ensuring faster and more reliable releases.",
+        },
+        {
+          title: "Praval Quality Engineering Toolkit",
+          desc: "A curated collection of reusable test assets, automation scripts, and validation templates built around industry best practices. This toolkit helps teams accelerate test coverage, reduce rework, and standardize quality checks across projects.",
+        },
+        {
+          title: "Praval Quality Intelligence Platform",
+          desc: "An AI-augmented platform that provides real-time insights into test health, defect trends, and risk areas. With built-in analytics and automation support, it helps quality engineering teams optimize test planning, prioritize issues, and make smarter decisions.",
+        },
+      ]
     },
-    {
-      title: "Improved Operational Efficiency",
-      desc: "Real-time analytics eliminates bottlenecks by identifying inefficiencies and automating decision-making processes, resulting in smoother workflows.",
-    },
-    {
-      title: "Proactive Risk Management",
-      desc: "Detect anomalies and address potential issues in real time to reduce downtime and enhance overall reliability.",
-    },
-    {
-      title: "Competitive Advantage",
-      desc: "With instant insights, you can outpace competitors by seizing opportunities faster and making smarter, data-driven decisions.",
-    },
-  ];
+    default: {
+      topCards: [
+        {
+          title: "Enhanced Customer Experiences",
+          desc: "Leverage real-time data to deliver personalized experiences by understanding customer preferences, anticipating their needs, and offering tailored solutions.",
+        },
+        {
+          title: "Improved Operational Efficiency",
+          desc: "Real-time analytics eliminates bottlenecks by identifying inefficiencies and automating decision-making processes, resulting in smoother workflows.",
+        },
+        {
+          title: "Proactive Risk Management",
+          desc: "Detect anomalies and address potential issues in real time to reduce downtime and enhance overall reliability.",
+        },
+        {
+          title: "Competitive Advantage",
+          desc: "With instant insights, you can outpace competitors by seizing opportunities faster and making smarter, data-driven decisions.",
+        },
+      ]
+    }
+   }
 
   const bottomCards = [
     {
@@ -41,22 +66,25 @@ export default function RealTimeAnalyticsSection() {
     },
   ];
 
+
+  const currentService = SERVICES_MAP[service] || SERVICES_MAP.default;
+
   return (
     <section className="hidden md:block py-12 bg-white">
       <div className="container mx-auto px-6">
 
-        <div className="mb-24">
+        <div className="mb-16">
           <h2 className="text-lg md:text-4xl font-semibold text-primaryText mb-12">
-            How Real-Time Analytics Drives Business Growth
+            {service === "default" ? "How Real-Time Analytics Drives Business Growth" : "Quality Engineering Solutions"}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-16">
-            {topCards.map((card, index) => (
+            {currentService.topCards.map((card, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl p-8 pb-16"
                 style={{
-                  boxShadow: "0px 3px 14px 0px #51A9E133",
+                  boxShadow: "0px 8px 10px 0px #51A9E124",
                 }}
               >
                 <h3 className="text-lg font-semibold mb-4 text-primaryText">
@@ -70,28 +98,31 @@ export default function RealTimeAnalyticsSection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-16 items-start">
+        {service === "default" && (
+          <div className="grid md:grid-cols-3 gap-16 items-start">
 
-          <div className="md:col-span-1">
-            <h2 className="text-lg md:text-4xl font-semibold text-primaryText leading-snug">
-              Features of Our <br /> Real-Time <br /> Analytics Solutions
-            </h2>
+            <div className="md:col-span-1">
+              <h2 className="text-lg md:text-4xl font-semibold text-primaryText leading-snug">
+                Features of Our <br /> Real-Time <br /> Analytics Solutions
+              </h2>
+            </div>
+
+            <div className="md:col-span-2 grid sm:grid-cols-2 gap-12">
+              {bottomCards.map((card, index) => (
+                <div key={index}>
+                  <h3 className="text-2xl font-semibold mb-3 text-primaryText">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-primaryText">
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
           </div>
+        )}
 
-          <div className="md:col-span-2 grid sm:grid-cols-2 gap-12">
-            {bottomCards.map((card, index) => (
-              <div key={index}>
-                <h3 className="text-2xl font-semibold mb-3 text-primaryText">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-primaryText">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
       </div>
     </section>
   );

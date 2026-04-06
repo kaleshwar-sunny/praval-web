@@ -66,9 +66,9 @@ export default function Footer() {
             {/* Services */}
             <h4 className="text-white text-base md:text-lg mb-4">Services</h4>
             <div className="grid grid-cols-2 gap-y-4 text-sm md:text-base font-light" style={{color: "#FFFFFF"}}>
-              <p>Digital Engineering</p>
-              <p>Data Analytics</p>
-              <p>Enterprise Platforms</p>
+              <Link href="/services/digital-engineering"><p>Digital Acceleration</p></Link>
+              <Link href="/services/data-analytics"><p>Data Analytics</p></Link>
+              <Link href="/services/enterprise-platforms"><p>Platforms</p></Link>
             </div>
 
             <div className="border-t border-gray-700 my-8" />

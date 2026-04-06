@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link"
+
 const blogs = [
   {
     title: "App Dev",
@@ -103,9 +105,11 @@ export default function LatestBlogsGrid() {
 
         {/* CTA */}
         <div className="mt-12 flex justify-center">
-          <button className="px-6 py-3 rounded-sm bg-white shadow-md text-[#0F72B1] font-medium">
-            View All Blogs
-          </button>
+          <Link href="/blogs">
+            <button className="px-6 py-3 rounded-sm bg-white shadow-md text-[#0F72B1] font-medium cursor-pointer">
+              View All Blogs
+            </button>
+          </Link>
         </div>
       </div>
     </section>

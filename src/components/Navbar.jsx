@@ -1,350 +1,863 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
-  const [showSalesforceSub, setShowSalesforceSub] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMobile, setActiveMobile] = useState(null);
-  const timeoutRef = useRef(null);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [serviceTab, setServiceTab] = useState("digital");
+  const [contactTab, setContactTab] = useState("about");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileActiveMenu, setMobileActiveMenu] = useState(null);
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+  // useEffect(() => {
+  //   const checkMobile = () => {
+  //     setIsMobile(window.innerWidth < 768);
+  //   };
+  //   checkMobile();
+  //   window.addEventListener("resize", checkMobile);
+  //   return () => window.removeEventListener("resize", checkMobile);
+  // }, []);
+
+  const toggleMobileMenu = (menu) => {
+    if (mobileActiveMenu === menu) {
+      setMobileActiveMenu(null);
+    } else {
+      setMobileActiveMenu(menu);
     }
-    setShowSalesforceSub(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setShowSalesforceSub(false);
-    }, 200);
   };
 
   return (
-    <nav className="w-full bg-white shadow-sm relative z-50">
-      <div className="container mx-auto px-6 md:py-0 flex items-center md:justify-evenly justify-between py-3">
-        
-        {/* LOGO */}
-        <Link href="/" className="flex items-center">
-          <img src="/images/praval-logo-text.svg" alt="Praval" className="h-10" />
+    <nav className="w-full bg-white relative z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-2 md:py-0">
+        <Link href="/">
+          <Image
+            src="/images/praval-logo-text.svg"
+            alt="Praval"
+            width={120}
+            height={40}
+            className="cursor-pointer"
+          />
         </Link>
-
-        {/* DESKTOP NAV */}
-        <div className="hidden lg:flex items-center gap-10 font-medium text-gray-800">
-          
-          {/* Digital Engineering */}
-          <div className="group/menu py-5">
-            <Link
-              href="/services/digital-engineering"
-              className="hover:text-[#0F72B1] cursor-pointer block"
-            >
-              Digital Engineering
-            </Link>
-
-            <MegaMenu>
-              <div className="grid grid-cols-[0.8fr_2fr] gap-16">
-                <div className="space-y-4">
-                    <MenuLink href="/services/digital-engineering/application-development">
-                      Application Development
-                    </MenuLink>
-                    <MenuLink href="/services/digital-engineering/low-code">
-                      Low Code No Code
-                    </MenuLink>
-                    <MenuLink href="/services/digital-engineering/azure">
-                      Azure
-                    </MenuLink>
-                    <MenuLink href="/services/digital-engineering/quality-engineering">
-                      Quality Engineering
-                    </MenuLink>
-                  </div>
-                <MenuImage />
-              </div>
-            </MegaMenu>
-          </div>
-
-          {/* Data Analytics */}
-          <div className="group/menu py-5">
-            <Link
-              href="/services/data-analytics"
-              className="hover:text-[#0F72B1] cursor-pointer block"
-            >
-              Data Analytics
-            </Link>
-
-            <MegaMenu>
-              <div className="grid grid-cols-[2fr_1.6fr] gap-8">
-                 <div className="grid grid-cols-[1.4fr_2fr] gap-8">
-                    <div className="space-y-4">
-                      <MenuLink href="/services/data-analytics/strategy-consulting">
-                        Strategy Consulting
-                      </MenuLink>
-                      <MenuLink href="/services/data-analytics/implementation">
-                        Implementation
-                      </MenuLink>
-                      <MenuLink href="/services/data-analytics/managed-services">
-                        Managed Services
-                      </MenuLink>
-                      <MenuLink href="/cloud-modernization">
-                        Cloud Modernization
-                      </MenuLink>
-                      <MenuLink href="/data-governance">
-                        Data Governance
-                      </MenuLink>
-                    </div>
-
-                    <div className="space-y-4">
-                      <MenuLink href="/cloud-modernization">
-                        AI & ML
-                      </MenuLink>
-                      <MenuLink href="/data-governance">
-                        Real-Time Analytics
-                      </MenuLink>
-                      <MenuLink href="/cloud-modernization">
-                        Data Visualisation
-                      </MenuLink>
-                      <MenuLink href="/data-governance">
-                        {`Modern Data Analytics 
-                        Platforms
-                        & Warehouses`}
-                      </MenuLink>
-                    </div>
-                  </div>
-                <MenuImage />
-              </div>
-            </MegaMenu>
-          </div>
-
-          {/* Enterprise Platforms */}
-          <div className="group/menu py-5">
-            <Link
-              href="/services/enterprise-platforms"
-              className="hover:text-[#0F72B1] cursor-pointer block"
-            >
-              Enterprise Platforms
-            </Link>
-
-            <MegaMenu>
-              <div className={`grid ${showSalesforceSub ? 'grid-cols-[0.6fr_1fr_2fr]' : 'grid-cols-[0.5fr_2fr]'} gap-12`}>
-                
-                {/* LEFT COLUMN */}
-                <div className="space-y-4">
-                  <MenuLink href="/services/enterprise-platforms/oracle">Oracle</MenuLink>
-                  <div
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <MenuLink href="/services/enterprise-platforms/salesforce">Salesforce <span className="text-3xl font-normal ml-4 relative -bottom-[2px]">›</span></MenuLink>
-                  </div>
-                  <MenuLink href="/services/enterprise-platforms/servicenow">ServiceNow</MenuLink>
-                  <MenuLink href="/services/enterprise-platforms/gainsight">Gainsight</MenuLink>
-                </div>
-
-                {showSalesforceSub && (
-                  /* SALESFORCE SUBMENU */
-                  <div
-                    className="transition-all duration-200"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <h4 className="font-semibold mb-4">Salesforce</h4>
-                    <div className="space-y-3 text-sm">
-                      <MenuLink href="/services/enterprise-platforms/salesforce/sales-cloud">
-                        Salesforce Sales Cloud
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/service-cloud">
-                        Salesforce Service Cloud
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/marketing-cloud">
-                        Salesforce Marketing Cloud
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/commerce-cloud">
-                        Salesforce Commerce Cloud
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/data-cloud">
-                        Salesforce Data Cloud
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/mulesoft">
-                        Mulesoft
-                      </MenuLink>
-                      <MenuLink href="/services/enterprise-platforms/salesforce/analytics-ai">
-                        Analytics & AI (Einstein)
-                      </MenuLink>
-                    </div>
-                  </div>
-                )}
-
-                <MenuImage />
-              </div>
-            </MegaMenu>
-          </div>
-
-          {/* Direct Links */}
-          <Link
-            href="/contact"
-            className="hover:text-[#0F72B1] cursor-pointer block"
+        
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 text-primaryText font-medium">
+          <div
+            onMouseEnter={() => setActiveMenu("platforms")}
+            onMouseLeave={() => setActiveMenu("platforms")}
+            className="py-4 hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
           >
-            Contact
+            Platforms
+          </div>
+
+          <div
+            onMouseEnter={() => setActiveMenu("services")}
+            onMouseLeave={() => setActiveMenu("services")}
+            className="py-4 hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
+          >
+            Services
+          </div>
+
+          <Link 
+            href="/blogs" 
+            className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
+            style={{ hover: { color: '#0F72B1' } }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#0F72B1';
+              setActiveMenu(null);
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#000';
+            }}
+          >
+            Blogs
           </Link>
 
-          <Link
-            href="/about"
-            className="hover:text-[#0F72B1] cursor-pointer block"
+          <div
+            onMouseEnter={() => setActiveMenu("contact")}
+            onMouseLeave={() => setActiveMenu("contact")}
+            className="py-4 hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
           >
-            About
+            Contact
+          </div>
+
+          <Link 
+            href="/careers" 
+            className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
+            style={{ hover: { color: '#0F72B1' } }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#0F72B1';
+              setActiveMenu(null);
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#000';
+            }}
+          >
+            Careers
           </Link>
         </div>
 
-        {/* HAMBURGER BUTTON */}
-          <button 
-            className="lg:hidden"
-            onClick={() => setMobileOpen(true)}
-          >
-            <div className="flex flex-col justify-center space-y-1">
-              <span className="block w-6 h-0.5 bg-gray-800 rounded"></span>
-              <span className="block w-6 h-0.5 bg-gray-800 rounded"></span>
-              <span className="block w-6 h-0.5 bg-gray-800 rounded"></span>
-            </div>
-          </button>
+        {/* Mobile Hamburger */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2 z-50 relative"
+        >
+          <span className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-gray-600 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
 
-      {/* MOBILE MENU */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-white z-50 p-6 lg:hidden overflow-y-auto">
-          <div className="flex justify-between items-center mb-10">
-            <img src="/images/praval-logo-text.svg" className="h-8" />
-            <button onClick={() => setMobileOpen(false)}>✕</button>
-          </div>
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-all duration-300 ${
+          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
 
-          {/* Digital Engineering */}
-          <MobileSection
-            title="Digital Engineering"
-            active={activeMobile === "de"}
-            onClick={() =>
-              setActiveMobile(activeMobile === "de" ? null : "de")
-            }
-          >
-            <p>Application Development</p>
-            <p>Low Code No Code</p>
-            <p>Azure</p>
-            <p>Quality Engineering</p>
-          </MobileSection>
-
-          <MobileSection
-            title="Data Analytics"
-            active={activeMobile === "da"}
-            onClick={() =>
-              setActiveMobile(activeMobile === "da" ? null : "da")
-            }
-          >
-            <p>Strategy Consulting</p>
-            <p>Implementation</p>
-            <p>Managed Services</p>
-          </MobileSection>
-
-          <MobileSection
-            title="Enterprise Platforms"
-            active={activeMobile === "ep"}
-            onClick={() =>
-              setActiveMobile(activeMobile === "ep" ? null : "ep")
-            }
-          >
-            <p>Oracle</p>
-            <p className="font-semibold mt-4">Salesforce ›</p>
-            <div className="pl-4 space-y-2">
-              <p>Salesforce Sales Cloud</p>
-              <p>Salesforce Service Cloud</p>
-              <p>Marketing Cloud</p>
-              <p>Commerce Cloud</p>
-              <p>Mulesoft</p>
-              <p>Analytics & AI</p>
+      {/* Mobile Menu Drawer */}
+      <div 
+        className={`md:hidden fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="pt-20 px-6 pb-6 h-full overflow-y-auto">
+          {/* Mobile Menu Items */}
+          <div className="space-y-4">
+            {/* Platforms */}
+            <div className="border-b border-gray-100 pb-3">
+              <button
+                onClick={() => toggleMobileMenu("platforms")}
+                className="flex justify-between items-center w-full py-2 text-left text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200"
+              >
+                <span>Platforms</span>
+                <span className="text-2xl transition-transform duration-200">
+                  {mobileActiveMenu === "platforms" ? "−" : "+"}
+                </span>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  mobileActiveMenu === "platforms" ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <MobilePlatforms setMobileMenuOpen={setMobileMenuOpen} />
+              </div>
             </div>
-            <p>ServiceNow</p>
-            <p>Gainsight</p>
-          </MobileSection>
 
-          <Link href="/contact" className="block mt-6 font-semibold">
-            Contact
-          </Link>
+            {/* Services */}
+            <div className="border-b border-gray-100 pb-3">
+              <button
+                onClick={() => toggleMobileMenu("services")}
+                className="flex justify-between items-center w-full py-2 text-left text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200"
+              >
+                <span>Services</span>
+                <span className="text-2xl transition-transform duration-200">
+                  {mobileActiveMenu === "services" ? "−" : "+"}
+                </span>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  mobileActiveMenu === "services" ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <MobileServices setMobileMenuOpen={setMobileMenuOpen} />
+              </div>
+            </div>
 
-          <Link href="/about" className="block mt-4 font-semibold">
-            About
-          </Link>
+            {/* Blogs */}
+            <Link 
+              href="/blogs" 
+              className="block py-2 text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200 border-b border-gray-100"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+
+            {/* Contact */}
+            <div className="border-b border-gray-100 pb-3">
+              <button
+                onClick={() => toggleMobileMenu("contact")}
+                className="flex justify-between items-center w-full py-2 text-left text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200"
+              >
+                <span>Contact</span>
+                <span className="text-2xl transition-transform duration-200">
+                  {mobileActiveMenu === "contact" ? "−" : "+"}
+                </span>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  mobileActiveMenu === "contact" ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <MobileContact />
+              </div>
+            </div>
+
+            {/* Careers */}
+            <Link 
+              href="/careers" 
+              className="block py-2 text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Careers
+            </Link>
+          </div>
         </div>
+      </div>
+
+      {/* Desktop Mega Menus - No animations */}
+      {activeMenu === "platforms" && (
+        <MegaPlatforms setActiveMenu={setActiveMenu} />
+      )}
+
+      {activeMenu === "services" && (
+        <MegaServices
+          setActiveMenu={setActiveMenu}
+          serviceTab={serviceTab}
+          setServiceTab={setServiceTab}
+        />
+      )}
+
+      {activeMenu === "contact" && (
+        <MegaContact
+          setActiveMenu={setActiveMenu}
+          contactTab={contactTab}
+          setContactTab={setContactTab}
+        />
       )}
     </nav>
   );
 }
 
-/* ---------------------------- */
-/* REUSABLE COMPONENTS */
-/* ---------------------------- */
+/* -------------------- Mobile Components -------------------- */
 
-function MegaMenu({ children }) {
+function MobilePlatforms({ setMobileMenuOpen }) {
+  const items = ["Oracle", "Salesforce", "ServiceNow", "Gainsight", "Microsoft", "Azure"];
+
+  return (
+    <div className="space-y-3 pl-4">
+      <p className="text-sm text-primaryText mb-3">
+        Praval's ERP solutions are designed to streamline business processes, enhance operational efficiency, and drive growth.
+      </p>
+      <div className="space-y-2">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-center justify-between">
+          <Link
+            key={i}
+            href={item.toLowerCase() === 'azure' 
+              ? `/services/digital-engineering/${item.toLowerCase()}`
+              : `/services/enterprise-platforms/${item.toLowerCase()}`
+            }
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+            }}
+            className="text-sm block py-2 text-primaryText hover:text-[#0F72B1] transition-colors duration-200"
+          >
+            {item}
+          </Link>
+          <Image
+            src="/images/rightArrowBlue.svg"
+            alt="platforms"
+            width={12}
+            height={12}
+          />
+          </div>
+        ))}
+      </div>
+      <Link href="/services/enterprise-platforms" onClick={(e) => {setMobileMenuOpen(false)}}>
+        <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded mt-2 w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+          Read More
+        </button>
+      </Link>
+    </div>
+  );
+}
+
+function MobileServices({ setMobileMenuOpen }) {
+  const [serviceTab, setServiceTab] = useState("digital");
+
+  const digitalItems = ["Digital Acceleration", "Data Analytics", "Gen AI"];
+  const dataItems = ["Strategy Consulting", "Implementation", "Managed Services", "Cloud Modernization", "AI & ML", "Real-Time Analytics", "Data Visualization", "Modern Data Platforms & Warehouses", "Data Governance"];
+
+  return (
+    <div className="pl-4 space-y-4">
+      {/* <div className="flex gap-4 border-b border-gray-200">
+        {["Digital Acceleration", "Data Analytics", "Gen AI"].map((item, i) => (
+          <button
+            key={i}
+            onClick={() => setServiceTab(i === 0 ? "digital" : i === 1 ? "data" : "genai")}
+            className={`pb-2 transition-all duration-200 text-left text-xs ${
+              (i === 0 && serviceTab === "digital") ||
+              (i === 1 && serviceTab === "data") ||
+              (i === 2 && serviceTab === "genai")
+                ? "text-[#0F72B1] border-b-2 border-[#0F72B1]"
+                : "text-primaryText"
+            }`}
+          >
+            {item}
+          </button>
+        ))}
+      </div> */}
+
+      <div className="space-y-3">
+        {digitalItems.map((item, i) => {
+          const getHref = (itemName) => {
+            if (itemName === 'Digital Acceleration') {
+              return '/services/digital-engineering';
+            }
+            if (itemName === 'Data Analytics') {
+              return '/services/data-analytics';
+            }
+            if (itemName === 'Gen AI') {
+              return '/services/enterprise-platforms';
+            }
+            return `/services/${itemName.toLowerCase().replace(/\s+/g, '-')}`;
+          };
+
+          return (
+            <div key={i} className="flex items-center justify-between">
+              <Link 
+                href={getHref(item)} 
+                className="block py-2 text-sm text-primaryText hover:text-[#0F72B1] transition-colors duration-200"
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                }}
+              >
+                {item}
+              </Link>
+              <Image
+                src="/images/rightArrowBlue.svg"
+                alt="platforms"
+                width={12}
+                height={12}
+              />
+            </div>
+          );
+        })}
+        {/* {serviceTab === "digital" && (
+          <>
+            <p className="text-sm text-primaryText">
+              Digital Acceleration goes beyond adopting new technologies; it requires a strategic approach.
+            </p>
+            <div className="space-y-2">
+              
+            </div>
+            <Link href="/services/digital-engineering" onClick={(e) => {setMobileMenuOpen(false)}}>
+              <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+                Read More
+              </button>
+            </Link>
+          </>
+        )}
+
+        {serviceTab === "data" && (
+          <>
+            <p className="text-sm text-primaryText mb-6">
+              We combine strategy, implementation, and managed services to ensure you achieve unparalleled results.
+            </p>
+            <div className="space-y-2">
+              {dataItems.map((item, i) => {
+                const getHref = (itemName) => {
+                  if (itemName === 'AI & ML') {
+                    return '/services/data-analytics/ai-ml';
+                  }
+                  if (itemName === 'Real-Time Analytics') {
+                    return '/services/data-analytics/realtime-analytics';
+                  }
+                  if (itemName === 'Modern Data Platforms & Warehouses') {
+                    return '/services/data-analytics/mdp-warehouses';
+                  }
+                  
+                  // Default: replace spaces with hyphens and convert to lowercase
+                  const formattedPath = itemName.toLowerCase().replace(/\s+/g, '-');
+                  return `/services/data-analytics/${formattedPath}`;
+                };
+                
+                return (
+                  <div key={i} className="flex items-center justify-between">
+                    <Link 
+                      href={getHref(item)} 
+                      className="block py-2 text-sm text-primaryText hover:text-[#0F72B1] transition-colors duration-200"
+                      onClick={(e) => {
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {item}
+                    </Link>
+                    <Image
+                      src="/images/rightArrowBlue.svg"
+                      alt="platforms"
+                      width={12}
+                      height={12}
+                    />
+                  </div>
+                );
+              })}
+              <Link href="/services/data-analytics" onClick={(e) => {setMobileMenuOpen(false)}}>
+                <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+                  Read More
+                </button>
+              </Link>
+            </div>
+          </>
+        )}
+
+        <>
+          {serviceTab === "genai" && (
+            <>
+              <p className="text-sm text-primaryText">
+                Tap into the true power of generative AI and transform your business into a cutting-edge innovator.
+              </p>
+              <Image
+                src="/images/genai.png"
+                alt="Gen AI"
+                width={300}
+                height={150}
+                className="hidden rounded-lg mt-2"
+              />
+              <Link href="/" onClick={(e) => {setMobileMenuOpen(false)}}>
+                <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+                  Read More
+                </button>
+              </Link>
+            </>
+          )}
+        </> */}
+      </div>
+
+      {/* <Link href="/services">
+        <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+          Read More
+        </button>
+      </Link> */}
+    </div>
+  );
+}
+
+function MobileContact() {
+  const [contactTab, setContactTab] = useState("about");
+
+  return (
+    <div className="space-y-4">
+      <div className="flex gap-6">
+        {["About", "Connect"].map((item, i) => (
+          <button
+            key={i}
+            onClick={() => setContactTab(i === 0 ? "about" : "connect")}
+            className={`transition-all duration-200 text-sm ${
+              (i === 0 && contactTab === "about") || (i === 1 && contactTab === "connect")
+                ? "text-[#0F72B1] font-semibold"
+                : "text-primaryText"
+            }`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+
+      {contactTab === "about" && (
+        <>
+          <p className="text-sm text-primaryText">
+            Praval embarked on a journey to make this vision a reality. Since our inception, we've been dedicated to helping businesses transform their operations.
+          </p>
+          <Link href="/about" onClick={(e) => {setMobileMenuOpen(false)}}>
+            <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
+              Read More
+            </button>
+          </Link>
+        </>
+      )}
+
+      {contactTab === "connect" && (
+        <div className="space-y-3">
+          <div>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">Business</h4>
+            <p className="text-primaryText">info@pravaltech.com</p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">Marketing</h4>
+            <p className="text-primaryText">partners@pravaltech.com</p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">Sales</h4>
+            <p className="text-primaryText">sales@pravaltech.com</p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">Careers</h4>
+            <p className="text-primaryText">hiring@pravaltech.com</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* -------------------- Desktop Mega Menus -------------------- */
+
+function MegaPlatforms({ setActiveMenu }) {
+  const items = ["Oracle", "Salesforce", "ServiceNow", "Gainsight", "Microsoft", "Azure"];
+  const [hovered, setHovered] = useState(null);
+
   return (
     <div
-      className="
-        absolute lg:left-[26.7%] xl:left-[36.7%] 2xl:left-[41.7%]
-        top-full
-        w-[90vw] max-w-4xl
-        bg-white shadow-2xl
-        p-10
-        opacity-0 invisible
-        group-hover/menu:opacity-100 group-hover/menu:visible
-        transition-all duration-300
-      "
+      onMouseEnter={() => setActiveMenu("platforms")}
+      onMouseLeave={() => setActiveMenu(null)}
+      className="absolute top-full left-0 w-screen bg-white shadow-lg border-t border-[#fef7f7] py-8"
     >
-      {children}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[2fr_1fr_2fr] gap-8">
+        {/* Column 1 */}
+        <div>
+          <h3 className="text-lg font-medium text-primaryText mb-3">Platforms</h3>
+          <p className="text-primaryText mb-4">
+            Praval's ERP solutions are designed to streamline business processes, enhance operational efficiency, and drive growth. Our comprehensive approach ensures seamless integration and optimization of your enterprise resources.
+          </p>
+          <Link href="/services/enterprise-platforms" onClick={(e) => {setActiveMenu(null)}}>
+            <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded mt-1 cursor-pointer">
+              Read More
+            </button>
+          </Link>
+        </div>
+
+        {/* Column 2 */}
+        <div className="space-y-3">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              className="flex justify-between cursor-pointer hover:text-[#0F72B1]"
+            >
+              <Link
+                key={i}
+                href={item.toLowerCase() === 'azure' 
+                  ? `/services/digital-engineering/${item.toLowerCase()}`
+                  : `/services/enterprise-platforms/${item.toLowerCase()}`
+                }
+                onClick={(e) => {setActiveMenu(null)}}
+                className="block py-1 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+              >
+                <span>{item}</span>
+                {hovered === i && 
+                  <div>
+                    <Image
+                      src="/images/rightArrowBlue.svg"
+                      alt="platforms"
+                      width={12}
+                      height={12}
+                    />
+                  </div>
+                }
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        {/* Column 3 */}
+        <div>
+          <Image
+            src="/images/platforms.png"
+            alt="platforms"
+            width={400}
+            height={300}
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
-function MenuLink({ href, children }) {
-  return (
-    <Link
-      href={href}
-      className="block hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
-    >
-      {children}
-    </Link>
-  );
-}
+function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
+  const items = ["Digital Acceleration", "Data Analytics", "Gen AI"];
+  const [hovered, setHovered] = useState(null);
+  const [hoveredDigital, setHoveredDigital] = useState(null);
+  const [hoveredData, setHoveredData] = useState(null);
 
-function MenuImage() {
+  const digitalItems = ["Application Development", "Low Code No Code", "Quality Engineering"];
+  const dataItems = ["Strategy Consulting", "Implementation", "Managed Services", "Cloud Modernization", "AI & ML", "Real-Time Analytics", "Data Visualization", "Modern Data Platforms & Warehouses", "Data Governance"];
+  
   return (
-    <div>
-      <img
-        src="/images/homeCarousel1.png"
-        alt="Menu Visual"
-        className="w-full h-56 object-cover rounded"
-      />
-      <p className="mt-4 font-semibold">Platform Overview</p>
-      <p className="text-sm text-gray-600">
-        Take a free tour of our platform features
-      </p>
+    <div
+      onMouseEnter={() => setActiveMenu("services")}
+      onMouseLeave={() => {
+        setServiceTab("digital");
+        setActiveMenu(null);
+      }}
+      className="absolute top-full left-0 w-screen bg-white shadow-lg border-t border-[#fef7f7] py-8"
+    >
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[1fr_2fr_1fr] gap-8">
+        {/* Column 1 */}
+        <div className="space-y-4">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => {
+                setHovered(i);
+                if (i === 0) setServiceTab("digital");
+                if (i === 1) setServiceTab("data");
+                if (i === 2) setServiceTab("genai");
+              }}
+              onMouseLeave={() => setHovered(null)}
+              className="flex justify-between cursor-pointer hover:text-[#0F72B1]"
+            >
+              {item}
+              {hovered === i && 
+              <div className="inline relative top-2">
+                <Image
+                  src="/images/rightBlue.svg"
+                  alt="arrow"
+                  width={8}
+                  height={8}
+                />
+              </div>
+              }
+            </div>
+          ))}
+        </div>
+
+        {/* Column 2 */}
+        <div>
+          {serviceTab === "digital" && (
+            <>
+              <h3 className="text-base md:text-lg font-medium text-primaryText mb-2">Digital Acceleration</h3>
+              <p className="text-primaryText mb-4">
+                Digital Acceleration goes beyond adopting new technologies; it requires a strategic approach. In order to succeed, businesses need to comprehend their long-term goals, adapt their digital strategies accordingly, and execute them in alignment with industry norms or even exceed them.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/services/digital-engineering" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+
+          {serviceTab === "data" && (
+            <>
+              <h3 className="text-base md:text-lg font-medium text-primaryText mb-2">Data Analytics</h3>
+              <p className="text-primaryText mb-4">
+                We combine strategy, implementation, and managed services to ensure you achieve unparalleled results. Whether you're modernizing your cloud infrastructure, delving into AI and machine learning, or enhancing your data governance, we've got you covered.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/services/data-analytics" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+
+          {serviceTab === "genai" && (
+            <>
+              <h3 className="text-base md:text-lg font-medium text-primaryText mb-2">Gen AI</h3>
+              <p className="text-primaryText mb-4">
+                Tap into the true power of generative AI and transform your business into a cutting-edge innovator driven by highly skilled, tech-savvy professionals. In this Praval insight, industry experts share how you can shape a future of work that is seamless, intelligent, and human-centered.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Column 3 */}
+        <div>
+          {serviceTab === "digital" && (
+            <ul className="space-y-2 text-primaryText">
+              {digitalItems.map((item, i) => {
+                const getHref = (itemName) => {
+                  if (itemName === 'Application development') {
+                    return '/services/digital-engineering/application-development';
+                  }
+                  if (itemName === 'Low Code No Code') {
+                    return '/services/digital-engineering/low-code';
+                  }
+                  return `/services/digital-engineering/${itemName.toLowerCase().replace(/\s+/g, '-')}`;
+                };
+
+                return (
+                  <li 
+                    key={i} 
+                    className="hover:text-[#0F72B1] cursor-pointer"
+                    onMouseEnter={() => setHoveredDigital(i)}
+                    onMouseLeave={() => setHoveredDigital(null)}
+                  >
+                    <Link
+                      href={getHref(item)}
+                      onClick={(e) => {setActiveMenu(null)}}
+                      className="block py-2 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+                    >
+                      <span>{item}</span>
+                      {hoveredDigital === i && (
+                        <Image
+                          src="/images/rightArrowBlue.svg"
+                          alt="arrow"
+                          width={12}
+                          height={12}
+                        />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          {serviceTab === "data" && (
+            <ul className="space-y-2 text-primaryText">
+              {dataItems.map((item, i) => {
+                // Function to generate the correct href based on item
+                const getHref = (itemName) => {
+                  // Custom mappings
+                  if (itemName === 'AI & ML') {
+                    return '/services/data-analytics/ai-ml';
+                  }
+                  if (itemName === 'Real-Time Analytics') {
+                    return '/services/data-analytics/realtime-analytics';
+                  }
+                  if (itemName === 'Modern Data Platforms & Warehouses') {
+                    return '/services/data-analytics/mdp-warehouses';
+                  }
+                  
+                  // Default: replace spaces with hyphens and convert to lowercase
+                  const formattedPath = itemName.toLowerCase().replace(/\s+/g, '-');
+                  return `/services/data-analytics/${formattedPath}`;
+                };
+
+                return (
+                  <li 
+                    key={i} 
+                    className="hover:text-[#0F72B1] cursor-pointer"
+                    onMouseEnter={() => setHoveredData(i)}
+                    onMouseLeave={() => setHoveredData(null)}
+                  >
+                    <Link
+                      href={getHref(item)}
+                      onClick={(e) => {setActiveMenu(null)}}
+                      className="block py-1 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+                    >
+                      <span>{item}</span>
+                      {hoveredData === i && (
+                        <Image
+                          src="/images/rightArrowBlue.svg"
+                          alt="arrow"
+                          width={12}
+                          height={12}
+                        />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          {serviceTab === "genai" && (
+            <Image
+              src="/images/genai.png"
+              alt="Gen AI"
+              width={800}
+              height={200}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
 
-/* MOBILE SECTION COMPONENT */
-function MobileSection({ title, children, active, onClick }) {
+function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
+  const items = ["About", "Connect With Us"];
+  const [hovered, setHovered] = useState(null);
+  
   return (
-    <div className="border-b py-4">
-      <button
-        onClick={onClick}
-        className="w-full flex justify-between items-center text-lg font-medium"
-      >
-        {title}
-        <span>{active ? "▾" : "›"}</span>
-      </button>
+    <div
+      onMouseEnter={() => setActiveMenu("contact")}
+      onMouseLeave={() => {
+        setActiveMenu(null);
+        setContactTab("about");
+      }}
+      className="absolute top-full left-0 w-screen bg-white shadow-lg border-t border-[#fef7f7] py-8"
+    >
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[1fr_2fr_1fr] gap-12">
+        {/* Column 1 */}
+        <div className="space-y-4">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => {
+                setHovered(i);
+                if (i === 0) setContactTab("about");
+                if (i === 1) setContactTab("connect");
+              }}
+              onMouseLeave={() => setHovered(null)}
+              className="flex justify-between cursor-pointer hover:text-[#0F72B1]"
+            >
+              {item}
+              {hovered === i && 
+              <div className="inline relative top-2">
+                <Image
+                  src="/images/rightBlue.svg"
+                  alt="arrow"
+                  width={8}
+                  height={8}
+                />
+              </div>
+              }
+            </div>
+          ))}
+        </div>
 
-      <div
-        className={`transition-all duration-300 overflow-hidden ${
-          active ? "max-h-[500px] mt-4 space-y-3" : "max-h-0"
-        }`}
-      >
-        {children}
+        {/* Column 2 */}
+        <div>
+          {contactTab === "about" && (
+            <>
+              <h3 className="text-lg font-medium text-primaryText mb-2">About Praval</h3>
+              <p className="text-primaryText mb-4">
+                Praval embarked on a journey to make this vision a reality. Since our inception, we've been dedicated to helping businesses transform their operations, make data-driven decisions, and thrive in a world defined by constant change.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/about" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+
+          {contactTab === "connect" && (
+            <>
+              <h4 className="font-semibold text-[#0F72B1]">Business</h4>
+              <p className="text-primaryText mb-2">info@pravaltech.com</p>
+
+              <h4 className="font-semibold text-[#0F72B1]">Marketing</h4>
+              <p className="text-primaryText">partners@pravaltech.com</p>
+            </>
+          )}
+        </div>
+
+        {/* Column 3 */}
+        <div>
+          {contactTab === "about" && (
+            <Image
+              src="/images/pentagon-grid.png"
+              alt="About"
+              width={250}
+              height={200}
+            />
+          )}
+
+          {contactTab === "connect" && (
+            <>
+              <h4 className="font-semibold text-[#0F72B1]">Sales</h4>
+              <p className="text-primaryText mb-2">sales@pravaltech.com</p>
+
+              <h4 className="font-semibold text-[#0F72B1]">Careers</h4>
+              <p className="text-primaryText">hiring@pravaltech.com</p>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -4,64 +4,89 @@ import { useEffect, useRef } from "react";
 
 export default function ClientLogosGrid() {
   const logos = [
-    "/images/logos/ca-technologies.png",
-    "/images/logos/digital-realty.png",
-    "/images/logos/university-montana.png",
-    "/images/logos/ntt-docomo.png",
     "/images/logos/adp.png",
-    "/images/logos/american-integrity.png",
-    "/images/logos/grant-thornton.png",
-    "/images/logos/mercedes-benz.png",
-    "/images/logos/burger-king.png",
+    "/images/logos/digital-realty.png",
+    "/images/logos/forgent.png",
+    "/images/logos/usAgency.png",
+    "/images/logos/cso.png",
+    "/images/logos/indorama.png",
+    "/images/logos/northtek.png",
+    "/images/logos/hubner.png",
+    "/images/logos/sportfive.png",
     "/images/logos/puma.png",
     "/images/logos/trumark.png",
     "/images/logos/mann-hummel.png",
     "/images/logos/astrazeneca.png",
     "/images/logos/national-parks.png",
     "/images/logos/parsons-behle.png",
-    "/images/logos/eating-recovery.png",
+    "/images/logos/qatarAuthority.png",
     "/images/logos/microsoft.png",
     "/images/logos/philadelphia-airport.png",
   ];
 
   const scrollContainerRef = useRef(null);
+  const animationRef = useRef(null);
+  const scrollPositionRef = useRef(0);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    const scrollSpeed = 0.25;
-    let animationFrameId;
-    let isPaused = false;
+    // Duplicate logos for seamless infinite scroll
+    const scrollContent = container.querySelector('.scroll-content');
+    
+    // Reset scroll position
+    scrollPositionRef.current = 0;
+    container.scrollLeft = 0;
 
-    const scrollLogos = () => {
-      if (!container || isPaused) return;
-
-      if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        container.scrollLeft = 0;
-      } else {
-        container.scrollLeft += scrollSpeed;
+    const scroll = () => {
+      if (!container) return;
+      
+      scrollPositionRef.current += 0.8; // Scroll speed
+      
+      // Reset position when reaching the end of first set
+      const singleSetWidth = container.scrollWidth / 2;
+      if (scrollPositionRef.current >= singleSetWidth) {
+        scrollPositionRef.current = 0;
       }
-
-      animationFrameId = requestAnimationFrame(scrollLogos);
+      
+      container.scrollLeft = scrollPositionRef.current;
+      
+      animationRef.current = requestAnimationFrame(scroll);
     };
 
-    const handleMouseEnter = () => (isPaused = true);
-    const handleMouseLeave = () => (isPaused = false);
+    // Start animation
+    animationRef.current = requestAnimationFrame(scroll);
 
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-    container.addEventListener("touchstart", handleMouseEnter);
-    container.addEventListener("touchend", handleMouseLeave);
+    // Pause on hover/touch
+    const pauseAnimation = () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    };
 
-    animationFrameId = requestAnimationFrame(scrollLogos);
+    const resumeAnimation = () => {
+      if (!animationRef.current) {
+        animationRef.current = requestAnimationFrame(scroll);
+      }
+    };
+
+    container.addEventListener("mouseenter", pauseAnimation);
+    container.addEventListener("mouseleave", resumeAnimation);
+    container.addEventListener("touchstart", pauseAnimation, { passive: true });
+    container.addEventListener("touchend", resumeAnimation);
+    container.addEventListener("touchcancel", resumeAnimation);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-      container.removeEventListener("touchstart", handleMouseEnter);
-      container.removeEventListener("touchend", handleMouseLeave);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      container.removeEventListener("mouseenter", pauseAnimation);
+      container.removeEventListener("mouseleave", resumeAnimation);
+      container.removeEventListener("touchstart", pauseAnimation);
+      container.removeEventListener("touchend", resumeAnimation);
+      container.removeEventListener("touchcancel", resumeAnimation);
     };
   }, []);
 
@@ -104,41 +129,46 @@ export default function ClientLogosGrid() {
           ))}
         </div>
 
-        {/* Mobile Auto-scrolling View - Smaller images, less gap */}
-        <div
-          ref={scrollContainerRef}
-          className="
-            md:hidden
-            flex
-            overflow-x-hidden
-            space-x-4
-            py-2
-            cursor-pointer
-          "
-          style={{
-            scrollBehavior: "auto",
-            WebkitOverflowScrolling: "touch",
-          }}
-        >
-          {[...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="
-                flex
-                items-center
-                justify-center
-                py-4 px-2
-                flex-shrink-0
-                min-w-[120px]
-              "
-            >
-              <img
-                src={logo}
-                alt={`Client logo ${(index % logos.length) + 1}`}
-                className="max-h-10 object-contain"
-              />
+        {/* Mobile Auto-scrolling View */}
+        <div className="md:hidden relative w-full overflow-hidden">
+          <div
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+            }}
+          >
+            <div className="scroll-content flex">
+              {/* First set of logos */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 w-[140px] flex items-center justify-center py-4 px-3"
+                >
+                  <img
+                    src={logo}
+                    alt={`Client logo ${index + 1}`}
+                    className="max-h-12 w-30 object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 w-[140px] flex items-center justify-center py-4 px-3"
+                >
+                  <img
+                    src={logo}
+                    alt={`Client logo ${index + 1}`}
+                    className="max-h-12 w-auto object-contain"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

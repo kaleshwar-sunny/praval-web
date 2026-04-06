@@ -31,6 +31,7 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "AA": "/images/analyticsAiHero.jpg",
     "SN": "/images/servicenowHero.jpg",
     "GS": "/images/lowCodeHero.jpg",
+    "QE": "/images/digitalEngineeringHero.png",
   };
 
   const imagePath = imageMap[bgImage];
@@ -56,7 +57,7 @@ export default function DigitalEngineeringHero({bgImage, title}) {
       >
         <img
           src={imagePath}
-          alt="Digital Engineering"
+          alt="Digital Acceleration"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/35" />

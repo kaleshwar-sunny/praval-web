@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 const slides = [
   {
-    title: "Digital Engineering",
+    title: "Digital Acceleration",
     description:
       "Digital is not the new, but the transformation is still. Digital capabilities accelerate business growth & allow organizations to build beyond.",
     image: "/images/homeCarousel1.png",
@@ -19,7 +19,7 @@ const slides = [
     link: "/services/data-analytics",
   },
   {
-    title: "Enterprise Platforms",
+    title: "Platforms",
     description:
       "Globally with the emergence of new work patterns post Covid-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
     image: "/images/homeCarousel3.png",

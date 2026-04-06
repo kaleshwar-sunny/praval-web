@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"
 
 const tabs = [
   {
     id: "engineering",
-    title: "Digital Engineering",
+    title: "Digital Acceleration",
     subtitle: "Think bigger with tech-forward strategies",
     description:
       "Digital is not the new, but the transformation is still. Digital capabilities accelerate business growth & allow organizations to skip the routines & build beyond.",
     image: "/images/ourServices1.png",
     bg: "bg-[#F3ECF1]",
-    iconUrl: "/images/digital-icon.svg"
+    iconUrl: "/images/digital-icon.svg",
+    route: "/services/digital-engineering"
   },
   {
     id: "analytics",
@@ -21,17 +23,19 @@ const tabs = [
       "Decision making backed by sound insights is the crucial differentiator for any business success. Praval offers broader expertise on end-to-end data analytic solutions.",
     image: "/images/ourServices2.png",
     bg: "bg-[#F3ECF1]",
-    iconUrl: "/images/data-icon.svg"
+    iconUrl: "/images/data-icon.svg",
+    route: "/services/data-analytics"
   },
   {
     id: "platforms",
-    title: "Enterprise Platforms",
+    title: "Platforms",
     subtitle: "Go further with Enterprise Platforms",
     description:
       "Globally with the emergence of new work patterns post Covid-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
     image: "/images/ourServices3.png",
     bg: "bg-[#F3ECF1]",
-    iconUrl: "/images/enterprise-icon.svg"
+    iconUrl: "/images/enterprise-icon.svg",
+    route: "services/enterprise-platforms"
   },
 ];
 
@@ -54,7 +58,7 @@ export default function ServicesTabs() {
                 {/* Tab Button */}
                 <button
                   onClick={() => setActive(tab)}
-                  className={`${isActive ? "hidden" : "block"} md:block w-full p-8 md:p-10 md:pt-6 lg:p-6 ${isActive ? "md:pb-16 lg:pb-10" : "md:mb-4"} text-center transition-all duration-300
+                  className={`${isActive ? "hidden" : "block"} cursor-pointer md:block w-full p-8 md:p-10 md:pt-6 lg:p-6 ${isActive ? "md:pb-16 lg:pb-10" : "md:mb-4"} text-center transition-all duration-300
                     ${isActive ? `${tab.bg}` : "bg-[#d2e4f1] hover:bg-gray-200"}
                     rounded-t-xl ${isActive ? "md:rounded-t-xl" : "rounded-xl md:rounded-xl"}
                   `}
@@ -127,9 +131,11 @@ function TabContent({ tab }) {
         <p className="text-primaryText mb-6 text-left">
           {tab.description}
         </p>
-        <button className="bg-[#0F72B1] text-white px-6 py-3 rounded-4xl md:rounded-lg hover:bg-blue-700 transition">
-          Learn More
-        </button>
+        <Link href={tab.route}>
+          <button className="bg-[#0F72B1] text-white px-6 py-3 rounded-4xl md:rounded-lg transition cursor-pointer">
+            Learn More
+          </button>
+        </Link>
       </div>
 
       {/* Image + Overlay Pills */}

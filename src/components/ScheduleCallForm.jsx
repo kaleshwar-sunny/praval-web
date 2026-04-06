@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function ScheduleCallForm() {
   return (
     <section className="relative mt-12 md:mt-0 py-12 text-left">
@@ -40,9 +42,11 @@ export default function ScheduleCallForm() {
                 </div>
 
               <div className="md:col-span-2 flex justify-center mt-4">
-                <button className="bg-[#0F72B1] text-white px-10 py-3 rounded-sm hover:bg-blue-700">
-                  Submit
-                </button>
+                <Link href="/">
+                  <button className="bg-[#0F72B1] text-white px-10 py-3 rounded-sm cursor-pointer">
+                    Submit
+                  </button>
+                </Link>
               </div>
             </form>
           </div>

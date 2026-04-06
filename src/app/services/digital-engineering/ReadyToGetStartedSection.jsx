@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function ReadyToGetStartedSection() {
   return (
     <section className="w-full overflow-hidden">
@@ -29,15 +31,17 @@ export default function ReadyToGetStartedSection() {
               </h2>
 
               {/* Arrow */}
-              <span
-                className="
-                  text-white text-4xl
-                  transition-transform duration-500 ease-out
-                  group-hover:translate-x-3
-                "
-              >
-                →
-              </span>
+              <Link href="/contact">
+                <span
+                  className="
+                    text-white text-4xl
+                    transition-transform duration-500 ease-out
+                    group-hover:translate-x-3
+                  "
+                >
+                  →
+                </span>
+              </Link>
             </div>
           </div>
         </div>

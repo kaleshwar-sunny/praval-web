@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"
 
 const slides = [
   {
@@ -9,9 +10,11 @@ const slides = [
       "Our client needed a way to connect its directors, founding members, new members, and fans worldwide.",
     image: "/images/latestInsights1.png",
     stats: [
-      { value: "75%", label: "Lorem Ipsum Lorem Ipsum" },
-      { value: "100%", label: "Lorem Ipsum Lorem Ipsum" },
+      { value: "75%", label: "Member engagement increased" },
+      { value: "40%", label: "Returning user rate increased" },
+      { value: "50%", label: "File Sharing and access speed improved" },
     ],
+    id: "globalCommunity"
   },
   {
     title:
@@ -20,10 +23,11 @@ const slides = [
       "All of client's data used to be previously managed by shared folders on servers, which was not efficient.",
     image: "/images/latestInsights2.png",
     stats: [
-      { value: "6x", label: "Lorem Ipsum Lorem Ipsum" },
-      { value: "1.6x", label: "Lorem Ipsum Lorem Ipsum" },
-      { value: "2x Revenue", label: "Lorem Ipsum Lorem Ipsum" },
+      { value: "6x", label: "Member engagement increased" },
+      { value: "1.6x", label: "Returning user rate increased" },
+      { value: "2x Revenue", label: "File Sharing and access speed improved" },
     ],
+    id: "erc"
   },
   {
     title:
@@ -32,10 +36,11 @@ const slides = [
       "In the protection and conversation of natural parks with a team of members & supporters, people, productivity and efficiency are the keys.",
     image: "/images/latestInsights3.png",
     stats: [
-      { value: "6x", label: "Lorem Ipsum Lorem Ipsum" },
-      { value: "1.6x", label: "Lorem Ipsum Lorem Ipsum" },
-      { value: "2x Revenue", label: "Lorem Ipsum Lorem Ipsum" },
+      { value: "6x", label: "Member engagement increased" },
+      { value: "1.6x", label: "Returning user rate increased" },
+      { value: "2x Revenue", label: "File Sharing and access speed improved" },
     ],
+    id: "npca"
   },
 ];
 
@@ -166,14 +171,16 @@ function SlideCard({ slide, active }) {
           <p className="text-white mb-6 leading-relaxed text-sm md:text-base">
             {slide.description}
           </p>
-          <span className="inline-flex items-center gap-2 text-white cursor-pointer">
-            Read More
-          <img
-            src="/images/rightArrow.svg"
-            alt="Previous slide"
-            className="w-4 h-4"
-          />
-          </span>
+          <Link href={`/case-studies/${slide.id}`}>
+            <span className="inline-flex items-center gap-2 text-white cursor-pointer">
+              Read More
+            <img
+              src="/images/rightArrow.svg"
+              alt="Previous slide"
+              className="w-4 h-4"
+            />
+            </span>
+          </Link>
         </div>
 
         {/* Right Stats */}
