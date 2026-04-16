@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 export default function CareersShowcase() {
   const videoRef = useRef(null);
@@ -42,9 +43,8 @@ export default function CareersShowcase() {
     <div className="w-full">
 
       {/* ===================== 1. TOP SECTION ===================== */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start md:items-center">
+      {/* <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start md:items-center">
         
-        {/* Left Text */}
         <div className="md:mt-auto md:mb-0 mt-auto">
           <h3 className="text-base md:text-lg text-primaryText font-medium mb-3">
             Great Creation
@@ -56,7 +56,6 @@ export default function CareersShowcase() {
           </p>
         </div>
 
-        {/* Right Video Player */}
         <div className="relative w-full overflow-hidden bg-black">
           
           <video
@@ -66,12 +65,9 @@ export default function CareersShowcase() {
             onTimeUpdate={handleTimeUpdate}
           />
 
-          {/* Controls */}
           <div className="absolute bottom-0 left-0 w-full bg-black/60 px-4 py-3">
             
-            {/* Progress Bar and Controls Row - Side by Side */}
             <div className="flex items-center gap-4">
-              {/* Progress Bar - takes remaining space */}
               <div
                 className="flex-1 h-1 bg-white/30 cursor-pointer"
                 onClick={handleSeek}
@@ -82,7 +78,6 @@ export default function CareersShowcase() {
                 />
               </div>
 
-              {/* Controls Row */}
               <div className="flex items-center">
                 <button
                   onClick={togglePlay}
@@ -94,7 +89,7 @@ export default function CareersShowcase() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ===================== 2. TEXT SECTION ===================== */}
       <div className="max-w-7xl mx-auto px-6 py-12 text-left">
@@ -125,9 +120,11 @@ export default function CareersShowcase() {
         />
 
         {/* Button */}
-        <button className="bg-[#1072b1] text-lg text-white font-bold px-8 py-3 rounded-2xl shadow-md hover:bg-[#398abd] hover:scale-102 cursor-pointer transition"> 
-          View Open Positions
-        </button>
+        <Link href="https://pravaltech.zohorecruit.in/jobs/Careers/" target="_blank">
+          <button className="bg-[#1072b1] text-lg text-white font-bold px-8 py-3 rounded-2xl shadow-md hover:bg-[#398abd] hover:scale-102 cursor-pointer transition"> 
+            View Open Positions
+          </button>
+        </Link>
       </div>
 
       {/* ===================== 4. IMAGE SECTION ===================== */}

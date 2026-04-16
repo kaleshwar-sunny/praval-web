@@ -13,7 +13,7 @@ const tabs = [
     image: "/images/ourServices1.png",
     bg: "bg-[#F3ECF1]",
     iconUrl: "/images/digital-icon.svg",
-    route: "/services/digital-engineering"
+    route: "/services/digital-acceleration"
   },
   {
     id: "analytics",

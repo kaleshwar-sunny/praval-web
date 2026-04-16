@@ -1,9 +1,10 @@
-import DigitalEngineeringHero from "../../../digital-engineering/DigitalEngineeringHero";
-import ReadyToGetStartedSection from "../../../digital-engineering/ReadyToGetStartedSection";
+import DigitalEngineeringHero from "../../../digital-acceleration/DigitalEngineeringHero";
+import ReadyToGetStartedSection from "../../../digital-acceleration/ReadyToGetStartedSection";
 import BenefitsHoverSection from "../../../data-analytics/BenefitsHoverSection";
-import ServicesStack from "../../../digital-engineering/ServicesStack";
+import ServicesStack from "../../../digital-acceleration/ServicesStack";
 import ServicesGrid from "../../ServicesGrid";
 import EinsteinFeatures from "../../EinsteinFeatures";
+import EinsteinAccordionSection from "../../EinsteinAccordionSection";
 
 export default function SalesforceServiceCloudPage() {
   return (
@@ -15,7 +16,7 @@ export default function SalesforceServiceCloudPage() {
       <BenefitsHoverSection service={"SFSC"} />
       <div className="my-6"></div>
       <ReadyToGetStartedSection />
-      <div className="my-6"></div>
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

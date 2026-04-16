@@ -28,18 +28,15 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-4 mb-8">
-              {[
-                "/images/instagram.svg",
-                "/images/linkedin.svg",
-                "/images/youtube.svg",
-              ].map((icon, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center"
-                >
-                  <img src={icon} alt="" className="h-5 w-5" />
+              <a
+                href="https://www.linkedin.com/company/praval/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                  <img src="/images/icons/linkedin.svg" alt="LinkedIn" className="h-10 w-10" />
                 </div>
-              ))}
+              </a>
             </div>
 
             {/* Badge + Subscribe (SIDE BY SIDE) */}
@@ -66,7 +63,7 @@ export default function Footer() {
             {/* Services */}
             <h4 className="text-white text-base md:text-lg mb-4">Services</h4>
             <div className="grid grid-cols-2 gap-y-4 text-sm md:text-base font-light" style={{color: "#FFFFFF"}}>
-              <Link href="/services/digital-engineering"><p>Digital Acceleration</p></Link>
+              <Link href="/services/digital-acceleration"><p>Digital Acceleration</p></Link>
               <Link href="/services/data-analytics"><p>Data Analytics</p></Link>
               <Link href="/services/enterprise-platforms"><p>Platforms</p></Link>
             </div>
@@ -101,11 +98,11 @@ export default function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="border-t border-gray-700 mt-16 pt-6 flex flex-col md:flex-row justify-between text-base gap-4 font-light" style={{color: "#FFFFFF"}}>
-          <p className="font-medium text-sm md:text-lg">Copyright © 2025 Praval</p>
+          <p className="font-medium text-sm md:text-lg">Copyright © 2026 Praval</p>
           <div className="flex text-sm md:text-base items-center gap-6">
-            <p>Privacy Policy</p>
+            <Link href="/privacy-policy">Privacy Policy</Link>
             <div className="h-4 w-px bg-gray-300"></div>
-            <p>Terms & Conditions</p>
+            <Link href="/terms-conditions">Terms & Conditions</Link>
           </div>
         </div>
       </div>

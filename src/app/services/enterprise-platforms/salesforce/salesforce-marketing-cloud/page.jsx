@@ -1,10 +1,11 @@
-import DigitalEngineeringHero from "../../../digital-engineering/DigitalEngineeringHero";
-import ReadyToGetStartedSection from "../../../digital-engineering/ReadyToGetStartedSection";
-import ServicesStack from "../../../digital-engineering/ServicesStack";
+import DigitalEngineeringHero from "../../../digital-acceleration/DigitalEngineeringHero";
+import ReadyToGetStartedSection from "../../../digital-acceleration/ReadyToGetStartedSection";
+import ServicesStack from "../../../digital-acceleration/ServicesStack";
 import ServicesGrid from "../../ServicesGrid";
-import WhyChooseUsSlider from "../../../digital-engineering/WhyChooseUsSlider";
+import WhyChooseUsSlider from "../../../digital-acceleration/WhyChooseUsSlider";
 import TechnologyFocusedExpertise from "../../../data-analytics/TechnologyFocusedExpertise";
-import OurEnterpriseCapabilities from "../../../enterprise-platforms/OurEnterpriseCapabilities";
+import OurEnterpriseCapabilities from "../../OurEnterpriseCapabilities";
+import EinsteinAccordionSection from "../../EinsteinAccordionSection";
 
 export default function SalesforceMarketingCloudPage() {
   return (
@@ -14,8 +15,9 @@ export default function SalesforceMarketingCloudPage() {
       <ServicesGrid service={"SMC"} title={"Key Features Of Salesforce Marketing Cloud"} />
       <OurEnterpriseCapabilities service={"SMC"} />
       <TechnologyFocusedExpertise service={"SMC"} />
-      <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
+      <ReadyToGetStartedSection />
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

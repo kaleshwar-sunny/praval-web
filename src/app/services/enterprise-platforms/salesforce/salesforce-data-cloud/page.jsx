@@ -1,9 +1,10 @@
-import DigitalEngineeringHero from "../../../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../../../digital-engineering/OverviewSection";
-import ReadyToGetStartedSection from "../../../digital-engineering/ReadyToGetStartedSection";
-import WhyChooseUsSlider from "../../../digital-engineering/WhyChooseUsSlider";
+import DigitalEngineeringHero from "../../../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../../../digital-acceleration/OverviewSection";
+import ReadyToGetStartedSection from "../../../digital-acceleration/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../../../digital-acceleration/WhyChooseUsSlider";
 import OurEnterpriseCapabilities from "../../../enterprise-platforms/OurEnterpriseCapabilities";
 import BenefitsHoverSection from "../../../data-analytics/BenefitsHoverSection";
+import EinsteinAccordionSection from "../../EinsteinAccordionSection";
 
 export default function SalesforceDataCloudPage() {
   return (
@@ -12,9 +13,9 @@ export default function SalesforceDataCloudPage() {
       <OverviewSection service={"SDC"}/>
       <OurEnterpriseCapabilities service={"SDC"} />
       <BenefitsHoverSection service={"SDC"} />
-      <div className="my-6"></div>
-      <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
+      <ReadyToGetStartedSection />
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

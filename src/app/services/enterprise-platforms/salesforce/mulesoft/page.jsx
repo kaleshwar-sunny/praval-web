@@ -1,8 +1,9 @@
-import DigitalEngineeringHero from "../../../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../../../digital-engineering/OverviewSection";
-import ReadyToGetStartedSection from "../../../digital-engineering/ReadyToGetStartedSection";
-import WhyChooseUsSlider from "../../../digital-engineering/WhyChooseUsSlider";
+import DigitalEngineeringHero from "../../../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../../../digital-acceleration/OverviewSection";
+import ReadyToGetStartedSection from "../../../digital-acceleration/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../../../digital-acceleration/WhyChooseUsSlider";
 import TechnologyFocusedExpertise from "../../../data-analytics/TechnologyFocusedExpertise";
+import EinsteinAccordionSection from "../../EinsteinAccordionSection";
 
 export default function MulesoftPage() {
   return (
@@ -10,8 +11,9 @@ export default function MulesoftPage() {
       <DigitalEngineeringHero bgImage={"ML"} title={"Mulesoft"}/>
       <OverviewSection service={"ML"}/>
       <TechnologyFocusedExpertise service={"ML"} />
-      <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
+      <ReadyToGetStartedSection />
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

@@ -107,3 +107,12 @@ select option:not([value=""]) {
   scrollbar-width: none;     /* Firefox */
 }
 
+::selection {
+  background-color: #0e73b1;  /* Your desired color */
+  color: #FFFFFF;              /* Text color when selected */
+}
+
+::-moz-selection {
+  background-color: #0e73b1;
+  color: #FFFFFF;
+}

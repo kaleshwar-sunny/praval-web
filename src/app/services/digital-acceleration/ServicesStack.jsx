@@ -8,25 +8,19 @@ export default function ServicesStack({ service = "DE" }) {
           title: "Digital Workplace Solutions",
           description:
             "Globally, with the emergence of new work patterns post COVID-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
-          link: "/services/digital-engineering/application-development",
+          link: "/services/digital-acceleration/application-development",
         },
         {
           title: "Low Code No Code Services",
           description:
             "Demand for faster development and delivery of solutions is ever scaling. The typical traditional application development can be tedious and resource intensive with frequent bottle necks.",
-          link: "/services/digital-engineering/low-code",
+          link: "/services/digital-acceleration/low-code",
         },
         {
           title: "Azure Services",
           description:
-            "Praval is your go to partner for Azure consulting services. Our Azure certified experts help businesses leverage the full potential of Microsoft Azure.",
-          link: "/services/digital-engineering/azure",
-        },
-        {
-          title: "Cloud Migration Services",
-          description:
-            "Most businesses have come to realize that they are losing out by holding on to legacy systems that come with high costs and complicated compliance.",
-          link: "/services/digital-engineering/low-code",
+            "Praval is your go to partner for Azure consulting services. Our Azure certified experts help businesses leverage the full potential of Microsoft Azure through strategic planning, and seamless migration.",
+          link: "/services/digital-acceleration/azure",
         },
       ],
     },

@@ -30,7 +30,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-white relative z-50">
+    <nav className="w-full sticky top-0 z-50 bg-white relative shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-2 md:py-0">
         <Link href="/">
           <Image
@@ -60,27 +60,14 @@ export default function Navbar() {
             Services
           </div>
 
-          <Link 
-            href="/blogs" 
-            className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
-            style={{ hover: { color: '#0F72B1' } }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#0F72B1';
-              setActiveMenu(null);
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#000';
-            }}
-          >
-            Blogs
-          </Link>
-
           <div
             onMouseEnter={() => setActiveMenu("contact")}
             onMouseLeave={() => setActiveMenu("contact")}
             className="py-4 hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
           >
-            Contact
+            <Link href="/contact" onClick={(e) => {setActiveMenu(null)}}>
+              Contact
+            </Link>
           </div>
 
           <Link 
@@ -96,6 +83,21 @@ export default function Navbar() {
             }}
           >
             Careers
+          </Link>
+
+          <Link 
+            href="/blogs" 
+            className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
+            style={{ hover: { color: '#0F72B1' } }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#0F72B1';
+              setActiveMenu(null);
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#000';
+            }}
+          >
+            Blogs
           </Link>
         </div>
 
@@ -124,9 +126,22 @@ export default function Navbar() {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="pt-20 px-6 pb-6 h-full overflow-y-auto">
+        <div className="pt-5 px-6 pb-6 h-full overflow-y-auto">
           {/* Mobile Menu Items */}
           <div className="space-y-4">
+            {/* Logo */}
+            <div className="border-b border-gray-100 pb-3">
+              <div className="py-2">
+                <Link href="/" onClick={(e) => {setMobileMenuOpen(false)}}>
+                  <img 
+                    src="/images/praval-logo-text.svg" 
+                    alt="Praval" 
+                    className="h-8 w-auto"
+                  />
+                </Link>
+              </div>
+            </div>
+            
             {/* Platforms */}
             <div className="border-b border-gray-100 pb-3">
               <button
@@ -167,15 +182,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Blogs */}
-            <Link 
-              href="/blogs" 
-              className="block py-2 text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200 border-b border-gray-100"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blogs
-            </Link>
-
             {/* Contact */}
             <div className="border-b border-gray-100 pb-3">
               <button
@@ -203,6 +209,15 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Careers
+            </Link>
+
+            {/* Blogs */}
+            <Link 
+              href="/blogs" 
+              className="block py-2 text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200 border-b border-gray-100"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blogs
             </Link>
           </div>
         </div>
@@ -248,7 +263,8 @@ function MobilePlatforms({ setMobileMenuOpen }) {
           <Link
             key={i}
             href={item.toLowerCase() === 'azure' 
-              ? `/services/digital-engineering/${item.toLowerCase()}`
+              ? `/services/digital-acceleration/${item.toLowerCase()}`
+              : item.toLowerCase() === 'microsoft' ? `/services/digital-acceleration`
               : `/services/enterprise-platforms/${item.toLowerCase()}`
             }
             onClick={(e) => {
@@ -306,13 +322,13 @@ function MobileServices({ setMobileMenuOpen }) {
         {digitalItems.map((item, i) => {
           const getHref = (itemName) => {
             if (itemName === 'Digital Acceleration') {
-              return '/services/digital-engineering';
+              return '/services/digital-acceleration';
             }
             if (itemName === 'Data Analytics') {
               return '/services/data-analytics';
             }
             if (itemName === 'Gen AI') {
-              return '/services/enterprise-platforms';
+              return '/genai';
             }
             return `/services/${itemName.toLowerCase().replace(/\s+/g, '-')}`;
           };
@@ -345,7 +361,7 @@ function MobileServices({ setMobileMenuOpen }) {
             <div className="space-y-2">
               
             </div>
-            <Link href="/services/digital-engineering" onClick={(e) => {setMobileMenuOpen(false)}}>
+            <Link href="/services/digital-acceleration" onClick={(e) => {setMobileMenuOpen(false)}}>
               <button className="text-sm bg-[#0F72B1] text-white px-4 py-2 rounded w-full cursor-pointer transition-all duration-200 hover:bg-[#0e5a8b]">
                 Read More
               </button>
@@ -478,16 +494,16 @@ function MobileContact() {
             <p className="text-primaryText">info@pravaltech.com</p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-[#0F72B1]">Marketing</h4>
-            <p className="text-primaryText">partners@pravaltech.com</p>
-          </div>
-          <div>
             <h4 className="text-sm font-semibold text-[#0F72B1]">Sales</h4>
             <p className="text-primaryText">sales@pravaltech.com</p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-[#0F72B1]">Careers</h4>
-            <p className="text-primaryText">hiring@pravaltech.com</p>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">U.S</h4>
+            <p className="text-primaryText">+1 302 220 5686</p>
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-[#0F72B1]">INDIA</h4>
+            <p className="text-primaryText">+91 950 200 2999</p>
           </div>
         </div>
       )}
@@ -533,7 +549,8 @@ function MegaPlatforms({ setActiveMenu }) {
               <Link
                 key={i}
                 href={item.toLowerCase() === 'azure' 
-                  ? `/services/digital-engineering/${item.toLowerCase()}`
+                  ? `/services/digital-acceleration/${item.toLowerCase()}`
+                  : item.toLowerCase() === 'microsoft' ? `/services/digital-acceleration`
                   : `/services/enterprise-platforms/${item.toLowerCase()}`
                 }
                 onClick={(e) => {setActiveMenu(null)}}
@@ -626,7 +643,7 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
                 Digital Acceleration goes beyond adopting new technologies; it requires a strategic approach. In order to succeed, businesses need to comprehend their long-term goals, adapt their digital strategies accordingly, and execute them in alignment with industry norms or even exceed them.
               </p>
               <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
-                <Link href="/services/digital-engineering" onClick={(e) => {setActiveMenu(null)}}>
+                <Link href="/services/digital-acceleration" onClick={(e) => {setActiveMenu(null)}}>
                   Read More
                 </Link>
               </button>
@@ -654,7 +671,7 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
                 Tap into the true power of generative AI and transform your business into a cutting-edge innovator driven by highly skilled, tech-savvy professionals. In this Praval insight, industry experts share how you can shape a future of work that is seamless, intelligent, and human-centered.
               </p>
               <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
-                <Link href="/" onClick={(e) => {setActiveMenu(null)}}>
+                <Link href="/genai" onClick={(e) => {setActiveMenu(null)}}>
                   Read More
                 </Link>
               </button>
@@ -669,12 +686,12 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
               {digitalItems.map((item, i) => {
                 const getHref = (itemName) => {
                   if (itemName === 'Application development') {
-                    return '/services/digital-engineering/application-development';
+                    return '/services/digital-acceleration/application-development';
                   }
                   if (itemName === 'Low Code No Code') {
-                    return '/services/digital-engineering/low-code';
+                    return '/services/digital-acceleration/low-code';
                   }
-                  return `/services/digital-engineering/${itemName.toLowerCase().replace(/\s+/g, '-')}`;
+                  return `/services/digital-acceleration/${itemName.toLowerCase().replace(/\s+/g, '-')}`;
                 };
 
                 return (
@@ -831,8 +848,8 @@ function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
               <h4 className="font-semibold text-[#0F72B1]">Business</h4>
               <p className="text-primaryText mb-2">info@pravaltech.com</p>
 
-              <h4 className="font-semibold text-[#0F72B1]">Marketing</h4>
-              <p className="text-primaryText">partners@pravaltech.com</p>
+              <h4 className="font-semibold text-[#0F72B1]">U.S</h4>
+              <p className="text-primaryText">+1 302 220 5686</p>
             </>
           )}
         </div>
@@ -853,8 +870,8 @@ function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
               <h4 className="font-semibold text-[#0F72B1]">Sales</h4>
               <p className="text-primaryText mb-2">sales@pravaltech.com</p>
 
-              <h4 className="font-semibold text-[#0F72B1]">Careers</h4>
-              <p className="text-primaryText">hiring@pravaltech.com</p>
+              <h4 className="font-semibold text-[#0F72B1]">INDIA</h4>
+              <p className="text-primaryText">+91 950 200 2999</p>
             </>
           )}
         </div>

@@ -71,7 +71,7 @@ export default function HiringProcess() {
         <p className="mt-16 text-sm md:text-base text-primaryText italic">
           We are always on the lookout for talented people to join our team.{" "}
           <Link
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/praval/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#0F72B1] font-medium hover:underline"

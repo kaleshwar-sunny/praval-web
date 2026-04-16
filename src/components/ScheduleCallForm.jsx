@@ -42,7 +42,7 @@ export default function ScheduleCallForm() {
                 </div>
 
               <div className="md:col-span-2 flex justify-center mt-4">
-                <Link href="/">
+                <Link href="#">
                   <button className="bg-[#0F72B1] text-white px-10 py-3 rounded-sm cursor-pointer">
                     Submit
                   </button>

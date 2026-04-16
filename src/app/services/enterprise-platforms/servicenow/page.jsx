@@ -1,8 +1,8 @@
-import DigitalEngineeringHero from "../../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../../digital-engineering/OverviewSection";
-import ServicesStack from "../../digital-engineering/ServicesStack";
-import ReadyToGetStartedSection from "../../digital-engineering/ReadyToGetStartedSection";
-import WhyChooseUsSlider from "../../digital-engineering/WhyChooseUsSlider";
+import DigitalEngineeringHero from "../../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../../digital-acceleration/OverviewSection";
+import ServicesStack from "../../digital-acceleration/ServicesStack";
+import ReadyToGetStartedSection from "../../digital-acceleration/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../../digital-acceleration/WhyChooseUsSlider";
 import ServicesGrid from "../ServicesGrid";
 
 export default function ServiceNowPage() {

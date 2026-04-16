@@ -1,8 +1,9 @@
-import DigitalEngineeringHero from "../../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../../digital-engineering/OverviewSection";
-import StrategyAccordion from "../../digital-engineering/StrategyAccordion";
-import ReadyToGetStartedSection from "../../digital-engineering/ReadyToGetStartedSection";
-import BenefitsHoverSection from "..//BenefitsHoverSection";
+import DigitalEngineeringHero from "../../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../../digital-acceleration/OverviewSection";
+import StrategyAccordion from "../../digital-acceleration/StrategyAccordion";
+import ReadyToGetStartedSection from "../../digital-acceleration/ReadyToGetStartedSection";
+import BenefitsHoverSection from "../BenefitsHoverSection";
+import EinsteinAccordionSection from "../../enterprise-platforms/EinsteinAccordionSection";
 
 export default function MDPPage() {
   return (
@@ -14,7 +15,7 @@ export default function MDPPage() {
       <BenefitsHoverSection />
       <div className="my-6"></div>
       <ReadyToGetStartedSection />
-      <div className="my-6"></div>
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

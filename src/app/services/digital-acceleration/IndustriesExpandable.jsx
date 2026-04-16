@@ -48,7 +48,6 @@ export default function IndustriesExpandable() {
                 className={`
                   relative rounded-xl overflow-hidden
                   transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]
-                  cursor-pointer
                   ${hovered === null
                     ? "w-[240px]"               
                     : isHovered

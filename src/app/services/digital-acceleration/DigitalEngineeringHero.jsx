@@ -32,6 +32,7 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "SN": "/images/servicenowHero.jpg",
     "GS": "/images/lowCodeHero.jpg",
     "QE": "/images/digitalEngineeringHero.png",
+    "GAI": "/images/genaiHero.jpg",
   };
 
   const imagePath = imageMap[bgImage];

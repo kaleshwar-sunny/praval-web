@@ -1,11 +1,12 @@
-import DigitalEngineeringHero from "../../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../../digital-engineering/OverviewSection";
-import ServicesStack from "../../digital-engineering/ServicesStack";
-import ReadyToGetStartedSection from "../../digital-engineering/ReadyToGetStartedSection";
-import WhyChooseUsSlider from "../../digital-engineering/WhyChooseUsSlider";
+import DigitalEngineeringHero from "../../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../../digital-acceleration/OverviewSection";
+import ServicesStack from "../../digital-acceleration/ServicesStack";
+import ReadyToGetStartedSection from "../../digital-acceleration/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../../digital-acceleration/WhyChooseUsSlider";
 import BenefitsHoverSection from "../BenefitsHoverSection";
-import IndustriesExpandable from "../../digital-engineering/IndustriesExpandable";
-import StrategyAccordion from "../../digital-engineering/StrategyAccordion";
+import IndustriesExpandable from "../../digital-acceleration/IndustriesExpandable";
+import StrategyAccordion from "../../digital-acceleration/StrategyAccordion";
+import EinsteinAccordionSection from "../../enterprise-platforms/EinsteinAccordionSection";
 
 export default function DataVisualizationPage() {
   return (
@@ -15,9 +16,9 @@ export default function DataVisualizationPage() {
       <StrategyAccordion service={"DV"} />
       <IndustriesExpandable />
       <BenefitsHoverSection />
-      <div className="my-6"></div>
-      <ReadyToGetStartedSection />
       <WhyChooseUsSlider />
+      <ReadyToGetStartedSection />
+      <EinsteinAccordionSection service={"faq"} />
     </>
   );
 }

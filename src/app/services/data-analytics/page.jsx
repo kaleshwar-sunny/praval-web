@@ -1,11 +1,11 @@
-import DigitalEngineeringHero from "../digital-engineering/DigitalEngineeringHero";
-import OverviewSection from "../digital-engineering/OverviewSection";
-import ServicesStack from "../digital-engineering/ServicesStack";
+import DigitalEngineeringHero from "../digital-acceleration/DigitalEngineeringHero";
+import OverviewSection from "../digital-acceleration/OverviewSection";
+import ServicesStack from "../digital-acceleration/ServicesStack";
 import TechnologyFocusedExpertise from "./TechnologyFocusedExpertise";
-import ReadyToGetStartedSection from "../digital-engineering/ReadyToGetStartedSection";
-import WhyChooseUsSlider from "../digital-engineering/WhyChooseUsSlider";
-import HowItWorksSlider from "../digital-engineering/HowItWorksSlider";
-import IndustriesExpandable from "../digital-engineering/IndustriesExpandable";
+import ReadyToGetStartedSection from "../digital-acceleration/ReadyToGetStartedSection";
+import WhyChooseUsSlider from "../digital-acceleration/WhyChooseUsSlider";
+import HowItWorksSlider from "../digital-acceleration/HowItWorksSlider";
+import IndustriesExpandable from "../digital-acceleration/IndustriesExpandable";
 
 export default function DataAnalyticsPage() {
   return (

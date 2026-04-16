@@ -9,7 +9,7 @@ const slides = [
     description:
       "Digital is not the new, but the transformation is still. Digital capabilities accelerate business growth & allow organizations to build beyond.",
     image: "/images/homeCarousel1.png",
-    link: "/services/digital-engineering",
+    link: "/services/digital-acceleration",
   },
   {
     title: "Data Analytics",
