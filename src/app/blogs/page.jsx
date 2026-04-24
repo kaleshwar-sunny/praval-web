@@ -137,7 +137,7 @@ export default function BlogLayout() {
                   {category.items.map((item, i) => (
                     <li key={i}>
                       <Link
-                        href="/blogs/blog-post"
+                        href="/blogs/bicepBlog"
                         className="text-sm textPrimaryText"
                         onMouseEnter={(e) => e.currentTarget.style.color = '#0F72B1'}
                         onMouseLeave={(e) => e.currentTarget.style.color = '#000'}
