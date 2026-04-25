@@ -6,7 +6,7 @@ const slides = [
   {
     title: "Industry Expertise",
     text:
-      "Our team consists of seasoned professionals with deep industry knowledge and hands-on experience in driving successful digital engineering across various sectors.",
+      "Our team consists of seasoned professionals with deep industry knowledge and hands-on experience in driving successful digital acceleration across various sectors.",
     icon: "/images/icons/expertise.svg",
   },
   {
@@ -18,7 +18,7 @@ const slides = [
   {
     title: "Proven Methodologies",
     text:
-      "We follow industry-leading frameworks and best practices in digital engineering, ensuring a structured and effective approach to achieving your desired outcomes.",
+      "We follow industry-leading frameworks and best practices in digital acceleration, ensuring a structured and effective approach to achieving your desired outcomes.",
     icon: "/images/icons/methodology.svg",
   },
   {

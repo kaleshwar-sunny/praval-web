@@ -18,7 +18,7 @@ export default function DataVisualizationPage() {
       <BenefitsHoverSection />
       <WhyChooseUsSlider />
       <ReadyToGetStartedSection />
-      <EinsteinAccordionSection service={"faq"} />
+      <EinsteinAccordionSection service={"faq"} category="Data Visualization" />
     </>
   );
 }

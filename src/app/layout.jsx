@@ -12,7 +12,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: "PRAVAL TECH | Professional Business Solutions",
+  title: "PRAVAL TECH",
   description:
     "PRAVAL TECH provides trusted and professional business services worldwide.",
   keywords: ["PRAVAL TECH", "Business Services", "Consulting"],

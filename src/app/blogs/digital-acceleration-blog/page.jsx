@@ -58,11 +58,11 @@ export default function DigitalEngineeringBlog() {
           <div id="overview" className="scroll-mt-20">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Overview:</h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               There was a time when I would see screens like the ones below on my seniors’ workstations, used for either maintenance or enhancement purposes. 
             </p>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               Back then, little did I know that those were the early days of Digital Transformation, a concept making waves across various industries. At its core, transformation means solving existing business problems in a more digitally optimized and future-ready way using the tools available at the time. While tools evolve over time, the fundamental concept of transformation remains the same.
             </p>
 
@@ -90,7 +90,7 @@ export default function DigitalEngineeringBlog() {
               />
             </div>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               The shift from monolithic applications to microservices involves breaking down a large, tightly coupled system into smaller, independent services that communicate via APIs. This transition enhances scalability, flexibility, and deployment speed but also introduces challenges like distributed data management and inter-service communication.
             </p>
 
@@ -98,7 +98,7 @@ export default function DigitalEngineeringBlog() {
               To Summarize <br />
               Digital Transformation + Product Engineering ={" "}
               <span className="text-[#0F72B1] font-semibold">
-                Digital Engineering
+                Digital Acceleration
               </span>
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function DigitalEngineeringBlog() {
               Monolithic to Microservices
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               As part of this transformation, software engineers have also embraced Product Engineering, where they fine-tune applications or products with detailed feature roadmaps, enhanced user experiences, and continuous improvements.
             </p>
 
@@ -124,7 +124,7 @@ export default function DigitalEngineeringBlog() {
               FAQs to Application Experience Guides
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               While FAQs provide users with written answers to common questions, in-app experience guides proactively walk users through features, helping them solve problems in real time and offering contextual support within the app. This approach improves product adoption, reduces support dependencies, and enhances user experience. Additionally, these guides can be personalized based on user behavior and roles.
             </p>
 
@@ -139,7 +139,7 @@ export default function DigitalEngineeringBlog() {
               Admin-Controlled to User Personalization
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               This evolution represents a shift from centralized, admin-controlled configurations to dynamic, personalized experiences tailored to each user’s preferences and behaviors. Examples include custom dashboards, targeted notifications, and adaptive user interfaces.
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function DigitalEngineeringBlog() {
               IIS Logs to Application Performance Monitoring (APM)
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               Traditionally, system monitoring relied on IIS logs, which involved manually analyzing log files. The shift to real-time application performance monitoring (APM) provides deeper insights into infrastructure health, application performance, user experience, and business metrics. These tools help detect performance issues, track dependencies, and optimize system performance proactively.
             </p>
 
@@ -166,7 +166,7 @@ export default function DigitalEngineeringBlog() {
               Cron Jobs to AI-Powered Automation
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               The transition from simple time-based automation (Cron Jobs) to AI-driven intelligent agents allows for smarter decision-making systems that adapt to changing conditions, optimize workflows, and self-correct when needed.
             </p>
 
@@ -181,7 +181,7 @@ export default function DigitalEngineeringBlog() {
               Native User Management to Identity Providers
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               It involves transitioning from managing user authentication, authorization, and data in-house, to using a specialized external service through built-in features and algorithms for improved security and threat detection to protect against cyber threats, reduce attack surfaces, and ensuring secure user access.
             </p>
 
@@ -196,7 +196,7 @@ export default function DigitalEngineeringBlog() {
               Final Thoughts
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               In all the above scenarios, it’s important to note that this isn’t just about transformation—it’s deeply coupled with feature engineering. The future looks even more exciting, with AI integration becoming a fundamental layer across software development. I believe AI is yet another layer seamlessly embedded into the classic architecture of UI, business logic, and data access layers.
             </p>
           </div>

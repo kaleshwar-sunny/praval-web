@@ -7,35 +7,80 @@ const tabs = [
   {
     id: "engineering",
     title: "Digital Acceleration",
-    subtitle: "Think bigger with tech-forward strategies",
+    subtitle: "AI & Digital Transformation for Business Advantage",
     description:
-      "Digital is not the new, but the transformation is still. Digital capabilities accelerate business growth & allow organizations to skip the routines & build beyond.",
+      `Build Beyond The Routine Accelerate Digital\n
+      We build for the lifecycle not just the launch date. Stability, scalability, and handoff included.`,
     image: "/images/ourServices1.png",
     bg: "bg-[#F3ECF1]",
     iconUrl: "/images/digital-icon.svg",
-    route: "/services/digital-acceleration"
+    route: "/services/digital-acceleration",
+    pillTexts: {
+      topLeft: {
+        text: "Digital Acceleration",
+        link: "/blogs/digital-acceleration-blog"
+      },
+      topRight: {
+        text: "5 best ways to use an intranet",
+        link: "/blogs/intranet"
+      },
+      bottom: {
+        text: "Strategies to future proof your internal communication plan",
+        link: "/blogs/bicepBlog"
+      }
+    }
   },
   {
     id: "analytics",
     title: "Data Analytics",
-    subtitle: "Move faster with data analytics",
+    subtitle: " From Data Insight to Impact",
     description:
-      "Decision making backed by sound insights is the crucial differentiator for any business success. Praval offers broader expertise on end-to-end data analytic solutions.",
+      `AI First Data Driven Future Ready\n
+      Our data analytics services close the gap between data and the decisions it was supposed to support.`,
     image: "/images/ourServices2.png",
     bg: "bg-[#F3ECF1]",
     iconUrl: "/images/data-icon.svg",
-    route: "/services/data-analytics"
+    route: "/services/data-analytics",
+    pillTexts: {
+      topLeft: {
+        text: "Data intelligence Chatbot",
+        link: "/blogs/digital-acceleration-blog"
+      },
+      topRight: {
+        text: "AI - Powered invoice processing",
+        link: "/blogs/choose-ai"
+      },
+      bottom: {
+        text: "Transforming Logistics Operations with Data-Driven Solutions",
+        link: "/blogs/bicepBlog"
+      }
+    }
   },
   {
     id: "platforms",
     title: "Platforms",
-    subtitle: "Go further with Enterprise Platforms",
+    subtitle: "From Platforms to Business Transformation",
     description:
-      "Globally with the emergence of new work patterns post Covid-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
+      `From Legacy to Leader Transform Everything\n
+      From SharePoint migration services to Microsoft 365 migration services — we handle the move and what comes after. As a SharePoint consulting company and Office 365 solutions provider, we build for the team using it. Not the one that signed it off.`,
     image: "/images/ourServices3.png",
     bg: "bg-[#F3ECF1]",
     iconUrl: "/images/enterprise-icon.svg",
-    route: "services/enterprise-platforms"
+    route: "services/enterprise-platforms",
+    pillTexts: {
+      topLeft: {
+        text: "Choosing Right AI Chatbot",
+        link: "/blogs/digital-acceleration-blog"
+      },
+      topRight: {
+        text: "Revamping IT service management",
+        link: "/blogs/choose-ai"
+      },
+      bottom: {
+        text: "Driving Innovation for a Global Data Centre",
+        link: "/blogs/bicepBlog"
+      }
+    }
   },
 ];
 
@@ -128,7 +173,7 @@ function TabContent({ tab }) {
               </p>
             </div>
           </div>
-        <p className="text-primaryText mb-6 text-left">
+        <p className="text-primaryText mb-6 text-left whitespace-pre-line">
           {tab.description}
         </p>
         <Link href={tab.route}>
@@ -153,11 +198,11 @@ function TabContent({ tab }) {
         <div className="absolute inset-0 flex items-end justify-center px-4 pb-6">
           <div className="flex flex-col w-full max-w-md lg:max-w-none gap-2 sm:gap-4">
             <div className="flex flex-row justify-evenly gap-2 items-center w-full">
-              <TextPill text="Migration Tools 2023" />
-              <TextPill text="Guide To Social Intranets" />
+              <TextPill text={tab.pillTexts.topLeft.text} blogLink={tab.pillTexts.topLeft.link} />
+              <TextPill text={tab.pillTexts.topRight.text} blogLink={tab.pillTexts.topRight.link}/>
             </div>
             <div className="flex flex-row justify-center w-full">
-              <TextPill text="Top 7 Features For Your Organization" />
+              <TextPill text={tab.pillTexts.bottom.text} blogLink={tab.pillTexts.bottom.link}/>
             </div>
           </div>
         </div>
@@ -168,10 +213,11 @@ function TabContent({ tab }) {
 
 /* ---------------- TEXT PILL ---------------- */
 
-function TextPill({ text }) {
+function TextPill({ text, blogLink }) {
+  
   return (
     <div className="
-      bg-blue-900/70 backdrop-blur-md
+      bg-blue-900/70 backdrop-blur-xs
       text-white text-center
       px-6 py-4
       rounded-xl
@@ -179,7 +225,7 @@ function TextPill({ text }) {
       font-medium
       w-full lg:w-auto
     ">
-      {text}
+      <Link href={blogLink}>{text}</Link>
     </div>
   );
 }

@@ -10,7 +10,7 @@ import IndustriesExpandable from "../digital-acceleration/IndustriesExpandable";
 export default function EnterprisePlatformsPage() {
   return (
     <>
-      <DigitalEngineeringHero bgImage={"EP"} title={"Platforms"}/>
+      <DigitalEngineeringHero bgImage={"EP"} title={"Platforms"} desc={"We enable organizations to optimize and extend their platform investments — improving efficiency, enhancing user experience, and delivering consistent performance at scale."}/>
       <OverviewSection service={"EP"}/>
       <ServicesStack service={"EP"}/>
       <OurEnterpriseCapabilities />

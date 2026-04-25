@@ -63,10 +63,10 @@ export default function CapabilitiesTabs() {
           Our Capabilities
         </h2>
         <p className="text-sm md:text-base text-primaryText mb-4 md:mb-10">
-          Praval digital engineering services are tailored to meet unique customer
+          Praval digital acceleration services are tailored to meet unique customer
           requirements. Right from improving workplace efficiency to strengthening
           governance and security, our experts are ever ready to offer the following
-          digital engineering services.
+          digital acceleration services.
         </p>
 
         {/* Tabs */}

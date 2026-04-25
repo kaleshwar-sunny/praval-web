@@ -62,11 +62,11 @@ export default function BicepBlogPage() {
               Bicep Language: Simplifying ARM Templates
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               If you’ve ever worked with Azure Resource Manager (ARM) templates, you know how complex they can be. These templates are JSON files that define the infrastructure needed to deploy an Azure resource, and they can be difficult to read, write, and maintain. Enter Bicep, a new language developed by Microsoft that simplifies the process of creating ARM templates.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               Bicep is an open-source Domain-Specific Language (DSL) that compiles into ARM templates. It uses a more human-readable syntax than JSON and provides built-in functions and types that simplify the creation of templates. Bicep code is designed to be easier to read, write, and maintain than ARM templates, making it an excellent choice for Infrastructure-as-Code (IaC) projects.
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function BicepBlogPage() {
               Why Bicep Language?
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               The primary advantage of the Bicep is its simplicity. Bicep code is easier to read and understand than ARM templates, reducing the time required to develop and maintain IaC code.
             </p>
           </div>
@@ -88,11 +88,11 @@ export default function BicepBlogPage() {
               Benefits of Using Bicep for Azure Resource Deployment
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-2">
+            <p className="text-sm md:text-base text-primaryText mb-2">
               Businesses leverage AI chatbots for several key reasons:
             </p>
 
-            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-gray-700">
+            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-primaryText">
               <li>
                 <b>Readability:</b> Bicep is designed to be easy to read and understand. Its syntax is similar to other programming languages, and it uses indentation to define blocks of code. This makes it easier to read than JSON, which can be challenging to parse, especially for large templates.
               </li>
@@ -117,11 +117,11 @@ export default function BicepBlogPage() {
               Getting Started with Bicep
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               To get started with Bicep, you’ll need to install the Bicep CLI. This is a command-line tool that allows you to compile Bicep code into ARM templates. Once you’ve installed the CLI, you can start writing Bicep code.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               Here’s an example of Bicep code that deploys an Azure Storage account:
             </p>
 
@@ -138,11 +138,11 @@ resource mystorageaccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
 }`}</pre>
             </div>
 
-            <p className="text-sm md:text-base text-gray-700 mt-4 mb-4">
+            <p className="text-sm md:text-base text-primaryText mt-4 mb-4">
               This is an Azure Resource Manager (ARM) template code snippet that creates a storage account resource. In this example, we define a parameter for the storage account name, and then we create a storage account resource. The resource is defined using the Microsoft.Storage/storageAccounts resource type, and we specify the name, location, SKU, and kind of the storage account.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
               To compile this code into an ARM template, you would run the following command:
             </p>
 
@@ -151,7 +151,7 @@ resource mystorageaccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
               New-AzResourceGroupDeployment -TemplateFile main.bicep
             </div>
 
-            <p className="text-sm md:text-base text-gray-700 mt-4">
+            <p className="text-sm md:text-base text-primaryText mt-4">
               This would generate an ARM template called main.json, which could then be deployed using Azure CLI or another deployment tool. Bicep is a powerful domain-specific language (DSL) for deploying infrastructure to Microsoft Azure. While there are several advantages to using Bicep, there are also a few potential drawbacks to consider. Here are some of the pros and cons of using Bicep:
             </p>
 
@@ -173,7 +173,7 @@ resource mystorageaccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
               Benefits of Bicep Language:
             </h2>
 
-            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-gray-700">
+            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-primaryText">
               <li><b>Define Purpose:</b> Bicep provides a simpler and more intuitive syntax than JSON templates, which makes it easier to write and understand.</li>
               <li><b>Simplified Syntax:</b> Bicep supports modularization, which enables code reuse and helps to simplify the management of large-scale deployments.</li>
               <li><b>Type Checking:</b> Bicep includes built-in type checking, which helps to identify errors before deployment, and saves time on debugging.</li>
@@ -188,7 +188,7 @@ resource mystorageaccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
               Drawbacks of Bicep Language:
             </h2>
 
-            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-gray-700">
+            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base text-primaryText">
               <li><b>Limited Ecosystem:</b> Bicep is a relatively new language, and its ecosystem is not as extensive as JSON templates. This may limit the availability of community resources such as forums, tutorials, and support.</li>
               <li><b>Learning Curve:</b> While Bicep’s syntax is simpler than JSON templates, it may still take some time to learn and master the language, especially for developers who are new to Azure.</li>
               <li><b>Limited Customization:</b> Bicep has some limitations on customization that may limit developers from achieving a few specific deployment scenarios.</li>
@@ -203,7 +203,7 @@ resource mystorageaccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
               Conclusion:
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
               Azure Bicep is an exciting new language that simplifies the process of creating ARM templates. Its human-readable syntax and built-in functions and types make it easier to write, read, and maintain IaC code. If you’re currently using ARM templates for your Azure deployments, you should consider giving Bicep a try.
             </p>
           </div>

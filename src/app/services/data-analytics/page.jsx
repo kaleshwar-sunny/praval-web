@@ -10,7 +10,7 @@ import IndustriesExpandable from "../digital-acceleration/IndustriesExpandable";
 export default function DataAnalyticsPage() {
   return (
     <>
-      <DigitalEngineeringHero bgImage={"DA"} title={"Data Analytics"}/>
+      <DigitalEngineeringHero bgImage={"DA"} title={"Data Analytics"} desc={"From data engineering to advanced analytics, we deliver end-to-end solutions that empower your teams to make faster, smarter, and more confident decisions."}/>
       <OverviewSection service={"DA"}/>
       <ServicesStack service={"DA"}/>
       <TechnologyFocusedExpertise />

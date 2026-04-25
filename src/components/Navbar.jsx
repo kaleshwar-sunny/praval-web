@@ -60,17 +60,30 @@ export default function Navbar() {
             Services
           </div>
 
+          <Link 
+            href="/contact" 
+            className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
+            style={{ hover: { color: '#0F72B1' } }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = '#0F72B1';
+              setActiveMenu(null);
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#000';
+            }}
+          >
+            Contact
+          </Link>
+
           <div
             onMouseEnter={() => setActiveMenu("contact")}
             onMouseLeave={() => setActiveMenu("contact")}
             className="py-4 hover:text-[#0F72B1] cursor-pointer transition-colors duration-200"
           >
-            <Link href="/contact" onClick={(e) => {setActiveMenu(null)}}>
-              Contact
-            </Link>
+              About
           </div>
 
-          <Link 
+          {/* <Link 
             href="/careers" 
             className="py-4 hover:text-[#0F72B1] transition-colors duration-200"
             style={{ hover: { color: '#0F72B1' } }}
@@ -98,7 +111,8 @@ export default function Navbar() {
             }}
           >
             Blogs
-          </Link>
+          </Link> */}
+
         </div>
 
         {/* Mobile Hamburger */}
@@ -218,6 +232,15 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Blogs
+            </Link>
+
+            {/* Case Studies */}
+            <Link 
+              href="/case-studies" 
+              className="block py-2 text-primaryText font-medium hover:text-[#0F72B1] transition-colors duration-200 border-b border-gray-100"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Case Studies
             </Link>
           </div>
         </div>
@@ -514,7 +537,8 @@ function MobileContact() {
 /* -------------------- Desktop Mega Menus -------------------- */
 
 function MegaPlatforms({ setActiveMenu }) {
-  const items = ["Oracle", "Salesforce", "ServiceNow", "Gainsight", "Microsoft", "Azure"];
+  const itemsCol1 = ["Oracle", "Salesforce", "ServiceNow"];
+  const itemsCol2 = ["Gainsight", "Microsoft", "Azure"];
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -523,7 +547,7 @@ function MegaPlatforms({ setActiveMenu }) {
       onMouseLeave={() => setActiveMenu(null)}
       className="absolute top-full left-0 w-screen bg-white shadow-lg border-t border-[#fef7f7] py-8"
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[2fr_1fr_2fr] gap-8">
+      <div className="max-w-7xl mx-auto px-6 grid gap-16" style={{gridTemplateColumns: "3fr 1fr 1fr"}}>
         {/* Column 1 */}
         <div>
           <h3 className="text-lg font-medium text-primaryText mb-3">Platforms</h3>
@@ -539,7 +563,7 @@ function MegaPlatforms({ setActiveMenu }) {
 
         {/* Column 2 */}
         <div className="space-y-3">
-          {items.map((item, i) => (
+          {itemsCol1.map((item, i) => (
             <div
               key={i}
               onMouseEnter={() => setHovered(i)}
@@ -554,10 +578,14 @@ function MegaPlatforms({ setActiveMenu }) {
                   : `/services/enterprise-platforms/${item.toLowerCase()}`
                 }
                 onClick={(e) => {setActiveMenu(null)}}
-                className="block py-1 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+                className="block py-1 text-[#1D2833] hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
               >
-                <span>{item}</span>
-                {hovered === i && 
+                    <span className="flex items-center gap-3">
+                      <span className="text-[#1D2833] hover:text-[#0F72B1]">•</span>
+                      <span>{item}</span>
+                    </span>
+
+                {/* {hovered === i && 
                   <div>
                     <Image
                       src="/images/rightArrowBlue.svg"
@@ -566,20 +594,48 @@ function MegaPlatforms({ setActiveMenu }) {
                       height={12}
                     />
                   </div>
-                }
+                } */}
               </Link>
             </div>
           ))}
         </div>
 
         {/* Column 3 */}
-        <div>
-          <Image
-            src="/images/platforms.png"
-            alt="platforms"
-            width={400}
-            height={300}
-          />
+        <div className="space-y-3">
+          {itemsCol2.map((item, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              className="flex justify-between cursor-pointer hover:text-[#0F72B1]"
+            >
+              <Link
+                key={i}
+                href={item.toLowerCase() === 'azure' 
+                  ? `/services/digital-acceleration/${item.toLowerCase()}`
+                  : item.toLowerCase() === 'microsoft' ? `/services/digital-acceleration`
+                  : `/services/enterprise-platforms/${item.toLowerCase()}`
+                }
+                onClick={(e) => {setActiveMenu(null)}}
+                className="block py-1 text-[#1D2833] hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+              >
+                    <span className="flex items-center gap-3">
+                      <span className="text-[#1D2833] hover:text-[#0F72B1]">•</span>
+                      <span>{item}</span>
+                    </span>
+                {/* {hovered === i && 
+                  <div>
+                    <Image
+                      src="/images/rightArrowBlue.svg"
+                      alt="platforms"
+                      width={12}
+                      height={12}
+                    />
+                  </div>
+                } */}
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -604,7 +660,7 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
       }}
       className="absolute top-full left-0 w-screen bg-white shadow-lg border-t border-[#fef7f7] py-8"
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[1fr_2fr_1fr] gap-8">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-[1fr_2fr_1fr] gap-16">
         {/* Column 1 */}
         <div className="space-y-4">
           {items.map((item, i) => (
@@ -704,17 +760,20 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
                     <Link
                       href={getHref(item)}
                       onClick={(e) => {setActiveMenu(null)}}
-                      className="block py-2 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+                      className="block py-2 text-[#1D2833] hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
                     >
+                    <span className="flex items-center gap-3">
+                      <span className="text-[#1D2833]">•</span>
                       <span>{item}</span>
-                      {hoveredDigital === i && (
+                    </span>
+                      {/* {hoveredDigital === i && (
                         <Image
                           src="/images/rightArrowBlue.svg"
                           alt="arrow"
                           width={12}
                           height={12}
                         />
-                      )}
+                      )} */}
                     </Link>
                   </li>
                 );
@@ -753,17 +812,20 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
                     <Link
                       href={getHref(item)}
                       onClick={(e) => {setActiveMenu(null)}}
-                      className="block py-1 text-primaryText hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
+                      className="block py-1 text-[#1D2833] hover:text-[#0F72B1] transition-colors duration-200 flex justify-between items-center w-full"
                     >
+                    <span className="flex items-center gap-3">
+                      <span className="text-[#1D2833]">•</span>
                       <span>{item}</span>
-                      {hoveredData === i && (
+                    </span>
+                      {/* {hoveredData === i && (
                         <Image
                           src="/images/rightArrowBlue.svg"
                           alt="arrow"
                           width={12}
                           height={12}
                         />
-                      )}
+                      )} */}
                     </Link>
                   </li>
                 );
@@ -771,14 +833,14 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
             </ul>
           )}
 
-          {serviceTab === "genai" && (
+          {/* {serviceTab === "genai" && (
             <Image
               src="/images/genai.png"
               alt="Gen AI"
               width={800}
               height={200}
             />
-          )}
+          )} */}
         </div>
       </div>
     </div>
@@ -786,7 +848,7 @@ function MegaServices({ setActiveMenu, serviceTab, setServiceTab }) {
 }
 
 function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
-  const items = ["About", "Connect With Us"];
+  const items = ["About", "Careers", "Blogs", "Case Studies"];
   const [hovered, setHovered] = useState(null);
   
   return (
@@ -807,7 +869,9 @@ function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
               onMouseEnter={() => {
                 setHovered(i);
                 if (i === 0) setContactTab("about");
-                if (i === 1) setContactTab("connect");
+                if (i === 1) setContactTab("careers");
+                if (i === 2) setContactTab("blogs");
+                if (i === 3) setContactTab("cases");
               }}
               onMouseLeave={() => setHovered(null)}
               className="flex justify-between cursor-pointer hover:text-[#0F72B1]"
@@ -843,7 +907,49 @@ function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
             </>
           )}
 
-          {contactTab === "connect" && (
+          {contactTab === "careers" && (
+            <>
+              <h3 className="text-lg font-medium text-primaryText mb-2"> <span className="text-[#0F72B1]">Join</span> us and make an impact</h3>
+              <p className="text-primaryText mb-4">
+                We're always on the lookout for bright, innovative minds to join our family. We believe in fostering a work environment that's not only challenging and rewarding, but also fun and inclusive. If you have a passion for digital solutions and a drive to constantly learn, grow, and innovate, you might just be the perfect fit for our team.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-6 py-2 rounded cursor-pointer">
+                <Link href="/careers" onClick={(e) => {setActiveMenu(null)}}>
+                  View Open Postions
+                </Link>
+              </button>
+            </>
+          )}
+
+          {contactTab === "blogs" && (
+            <>
+              <h3 className="text-lg font-medium text-primaryText mb-2">Blogs</h3>
+              <p className="text-primaryText mb-4">
+                Quarterly accounts of the engagements we reframed, notes from the methodologies that worked, and the occasional postmortem we'd rather not have written. We publish here because the conversations that matter in IT services — what surfaces during discovery, what gets renegotiated past the SOW, what a deployment actually looks like ninety days after go-live — almost never make it onto a partner's case studies page.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/blogs" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+
+          {contactTab === "cases" && (
+            <>
+              <h3 className="text-lg font-medium text-primaryText mb-2">Case Studies</h3>
+              <p className="text-primaryText mb-4">
+                Read what shifted, not what was delivered. Each case follows the same four sections: the ask, the real problem we surfaced in discovery, the platform stack we built on, and the operational outcome that confirmed the work landed.
+              </p>
+              <button className="text-sm md:text-base bg-[#0F72B1] text-white px-4 py-2 rounded cursor-pointer">
+                <Link href="/case-studies" onClick={(e) => {setActiveMenu(null)}}>
+                  Read More
+                </Link>
+              </button>
+            </>
+          )}
+
+          {/* {contactTab === "connect" && (
             <>
               <h4 className="font-semibold text-[#0F72B1]">Business</h4>
               <p className="text-primaryText mb-2">info@pravaltech.com</p>
@@ -851,7 +957,7 @@ function MegaContact({ setActiveMenu, contactTab, setContactTab }) {
               <h4 className="font-semibold text-[#0F72B1]">U.S</h4>
               <p className="text-primaryText">+1 302 220 5686</p>
             </>
-          )}
+          )} */}
         </div>
 
         {/* Column 3 */}

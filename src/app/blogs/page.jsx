@@ -9,36 +9,27 @@ const categoriesData = [
   {
     title: "Digital Acceleration",
     items: [
-      "A Guide to Social Intranets for boosting productivity",
-      "Strategies to futureproof your internal communication plan",
-      "5 Best migration tools for 2023 from Praval",
-      "Easy Way to Automate Azure Resource Deployment",
-      "Top 7 Features for Your Organization",
-      "10 Essentials Your Content Management System Needs",
-      "Fix Broken Links in Excel in SharePoint Migrations",
-      "Role of Intranet in business for enhanced productivity",
-      "5 best ways to use an intranet for internal communication",
+      { subCat: "Digital Acceleration", link: "/blogs/digital-acceleration-blog" },
+      { subCat: "Strategies to futureproof your internal communication plan", link: "/blogs/bicepBlog" },
+      { subCat: "5 best ways to use an intranet for internal communication", link: "/blogs/intranet" },
     ],
   },
   {
     title: "Data Analytics",
     items: [
-      "KQL Chronicles – Mastering Azure Log Analytics for Peak Performance",
-      "Beyond Basic RAG: Modular, Multi-Source Querying with LangChain and Zero-Shot Agents",
-      "Repointing Power BI Reports Using REST API",
-      "Effortless Data Flow – PBI Paginated Reports to SharePoint",
-      "Self-Healing Data Integration Pipelines with AI-Driven Anomaly Detection",
-      "Transforming Logistics Operations with Data-Driven Solutions",
+      { subCat: "A Data Intelligence Chatbot that lets every business user query enterprise databases in natural language - no SQL, no analysts, no waiting", link: "/blogs/chatbot-blog" },
+      { subCat: "AI-Powered Invoice Processing & Reconciliation", link: "/blogs/ai-powered" },
+      { subCat: "Transforming Logistics Operations with Data-Driven Solutions", link: "/blogs/logistics" },
+      { subCat: "Repointing Power BI Reports Using REST API", link: "/blogs/power-bi" },
     ],
   },
   {
     title: "Platforms",
     items: [
-      "Revolutionizing Manufacturing with Salesforce",
-      "Salesforce Digital Labor: Empowering Workforces with Agentforce",
-      "Choosing the Right AI Chatbot for Your Business",
-      "Revamping IT Service Management",
-      "Driving Innovation for a Global Data Centre Industry Leader with ServiceNow Solutions",
+      { subCat: "Revolutionizing Manufacturing with Salesforce", link: "/blogs/salesforce-blog" },
+      { subCat: "Choosing the Right AI Chatbot for Your Business", link: "/blogs/choose-ai" },
+      { subCat: "Revamping IT Service Management", link: "/blogs/servicenow-blog" },
+      { subCat: "Driving Innovation for a Global Data Centre Industry Leader with ServiceNow Solutions", link: "/blogs/service-solution" },
     ],
   },
 ];
@@ -48,31 +39,37 @@ const blogsData = [
     title: "Revamping IT Service Management",
     desc: "A global energy management company faced significant challenges with their IT service management processes.",
     image: "/images/blog1.png",
+    link: "/blogs/servicenow-blog"
   },
   {
-    title: "Choosing the right AI Chatbot for your business",
-    desc: "As businesses increasingly embrace digital solutions to improve customer engagement and streamline operations, AI chatbots have become an essential tool in their toolkit.",
+    title: "A Data Intelligence Chatbot",
+    desc: "A Data Intelligence Chatbot that lets every business user query enterprise databases in natural language — no SQL, no analysts, no waiting.",
     image: "/images/blog2.png",
+    link: "/blogs/chatbot-blog"
   },
   {
-    title: "Top 7 Features for Your Organization",
-    desc: "For an organization to achieve successful growth it needs to communicate and engage with its employees on a regular basis.",
+    title: "5 best ways to use an intranet",
+    desc: "Most businesses and organizations place more emphasis on external communications than on internal communications. ",
     image: "/images/blog3.png",
+    link: "/blogs/intranet"
   },
   {
-    title: "A Guide to Social Intranets for Boosting Productivity",
-    desc: "For an organization to achieve successful growth it needs to communicate and engage with its employees on a regular basis.",
+    title: "AI-Powered Invoice Processing & Reconciliation",
+    desc: "A logistics company was struggling with inefficiencies that impacted warehouse space utilization, operational flow, and cost control.",
     image: "/images/blog4.png",
+    link: "/blogs/ai-powered"
   },
   {
-    title: "Revolutionizing Manufacturing with Salesforce: The Future of Smart Factories",
-    desc: "The manufacturing industry is evolving rapidly, with companies seeking smarter, more connected, and efficient solutions to meet the demands of Industry 4.0.",
+    title: "Digital Engineering",
+    desc: "There was a time when I would see screens like the ones below on my seniors’ workstations, used for either maintenance or enhancement purposes. ",
     image: "/images/blog5.png",
+    link: "/blogs/digital-acceleration-blog"
   },
   {
-    title: "Select KQL Chronicles",
-    desc: "Monitoring and analyzing logs is essential for understanding the health, performance, and security of cloud-based systems.",
+    title: "Driving Innovation for a Global Data Centre",
+    desc: "At Praval, we work alongside global associates and enterprise teams to tackle complex operational challenges.",
     image: "/images/blog6.png",
+    link: "/blogs/service-solution"
   },
 ];
 
@@ -137,12 +134,12 @@ export default function BlogLayout() {
                   {category.items.map((item, i) => (
                     <li key={i}>
                       <Link
-                        href="/blogs/bicepBlog"
+                        href={item.link}
                         className="text-sm textPrimaryText"
                         onMouseEnter={(e) => e.currentTarget.style.color = '#0F72B1'}
                         onMouseLeave={(e) => e.currentTarget.style.color = '#000'}
                       >
-                        {item}
+                        {item.subCat}
                       </Link>
                     </li>
                   ))}
@@ -174,7 +171,7 @@ export default function BlogLayout() {
                     />
                   </div>
 
-                  <Link href="/blogs/blog-post" className="block">
+                  <Link href={blog.link} className="block">
                     <h3 className="text-[#0F72B1] font-medium hover:underline">
                       {blog.title}
                     </h3>

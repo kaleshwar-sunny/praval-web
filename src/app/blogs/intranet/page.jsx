@@ -56,11 +56,11 @@ export default function IntranetBlogPage() {
             <div id="overview" className="scroll-mt-20">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Overview</h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
                 Most businesses and organizations place more emphasis on external communications than on internal communications. The latter, Most businesses and organizations place more emphasis on external communications than on internal communications. The latter, however, needs to be better accounted for, and can prove costly if not paid heed to in the long run. With smooth and efficient internal communications, production processes and quality of work tend to improve, driving higher costs.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
                 That is probably why improving internal communication should be one the top corporate intranet priorities. Initially, intranets were nothing more than message boards with document-sharing capabilities. But modern intranets, especially those built with SharePoint, provide a plethora of internal communication options. These tools and technologies can help businesses make the most of their intranets.
             </p>
             </div>
@@ -71,19 +71,19 @@ export default function IntranetBlogPage() {
                 What is an Intranet?
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
                 An intranet is a private computer network used within an organization to share information and resources among its employees, departments, and other authorized users. Unlike the internet which is a public network accessible to anyone — an intranet is only accessible within the organization or company that owns it.” Intranets facilitate communication, collaboration, and information sharing.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
                 They typically include tools for email, instant messaging, document sharing, and other types of collaboration software. Intranets can also be used for internal business processes such as HR management, finance, and project management. Intranets are often secured with firewalls and other security measures to ensure only authorized users can access the network. They are typically hosted on internal servers and can be accessed by employees from their computers or mobile devices within the organization’s network.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
                 Here are some of the <span className="text-[#0F72B1]">key benefits of intranet for internal communication</span>.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
                 That is probably why improving internal communication should be one the top corporate intranet priorities. Initially, intranets were nothing more than message boards with document-sharing capabilities. But modern intranets, especially those built with SharePoint, provide a plethora of internal communication options. These tools and technologies can help businesses make the most of their intranets.
             </p>
             </div>
@@ -94,7 +94,7 @@ export default function IntranetBlogPage() {
                 Best ways to use an intranet for internal communication
             </h2>
 
-            <ul className="list-disc pl-5 space-y-4 text-sm md:text-base text-gray-700">
+            <ul className="list-disc pl-5 space-y-4 text-sm md:text-base text-primaryText">
                 <li>
                 <b>Centralized communication hub:</b> An intranet centralized communication hub is a system that enables the efficient and effective exchange of information and communication within an organization via an internal network. This hub is typically hosted on a company’s private network and accessible only to its employees and other authorized personnel.
                 </li>
@@ -123,7 +123,7 @@ export default function IntranetBlogPage() {
                 Benefits of using an intranet for internal communication
             </h2>
 
-            <ul className="list-disc pl-5 space-y-4 text-sm md:text-base text-gray-700">
+            <ul className="list-disc pl-5 space-y-4 text-sm md:text-base text-primaryText">
                 <li>
                 <b>Improved communication:</b> An intranet provides a platform for employees to communicate with each other, share ideas, and collaborate on projects, which can improve communication and productivity.
                 </li>
@@ -152,11 +152,11 @@ export default function IntranetBlogPage() {
                 Conclusion
             </h2>
 
-            <p className="text-sm md:text-base text-gray-700 mb-4">
+            <p className="text-sm md:text-base text-primaryText mb-4">
                 In summary, an intranet can be a powerful tool for improving internal communication within your organization. A centralized communication and collaboration platform can help improve productivity, knowledge sharing, and employee engagement while reducing costs. By centralizing communication, fostering collaboration, and providing easy access to critical information, you can help your employees stay informed, engaged, and connected.
             </p>
 
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-sm md:text-base text-primaryText">
                 Any corporate leader today must be aware of how corporate intranets function in all spheres of society. By implementing an intranet for internal communication, your business will be able to communicate, conduct business, and generate more effective revenue on a regular basis.
             </p>
             </div>

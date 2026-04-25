@@ -44,6 +44,17 @@ export default function PrivacyPolicy() {
           </p>
         </div>
 
+        {/* GDPR Notice */}
+        <div>
+          <h2 className="text-xl md:text-3xl font-semibold mb-4">
+            GDPR Notice
+          </h2>
+
+          <p className="text-sm md:text-base text-primaryText leading-relaxed mb-4">
+            We are committed to protecting your personal data in accordance with the GDPR. You have the right to access, correct, delete, restrict processing of, object to the use of, and request portability of your personal data. Where processing is based on consent, you may withdraw your consent at any time. To exercise these rights or raise a privacy concern, please contact us using the details provided on this website.
+          </p>
+        </div>
+
         {/* USAGE & DISCLOSURE */}
         <div>
           <h2 className="text-xl md:text-3xl font-semibold mb-4">

@@ -42,7 +42,7 @@ export default function CareerSection() {
             
             {/* Left - Button */}
             <div className="hidden md:flex md:items-start justify-center md:justify-start md:mt-4">
-                <a href="/opportunities" className="inline-block md:mt-0 mt-auto">
+                <a href="/careers" className="inline-block md:mt-0 mt-auto">
                     <button className="flex items-center gap-3 bg-[#0F72B1] text-white px-4 py-3 rounded-full shadow-md hover:bg-[#3a91c6] transition cursor-pointer whitespace-nowrap">
                     Explore Opportunities
                     <span className="bg-white text-blue-600 rounded-full w-6 h-6 flex items-center justify-center">
@@ -72,7 +72,7 @@ export default function CareerSection() {
 
                         {/* Bottom - Button */}
             <div className="md:hidden flex md:items-start justify-center md:justify-start md:mt-4">
-                <a href="/opportunities" className="inline-block md:mt-0 mt-auto">
+                <a href="/careers" className="inline-block md:mt-0 mt-auto">
                     <button className="flex items-center gap-3 bg-[#0F72B1] text-white px-4 py-3 rounded-full shadow-md hover:bg-[#3a91c6] transition cursor-pointer whitespace-nowrap">
                     Explore Opportunities
                     <span className="bg-white text-blue-600 rounded-full w-6 h-6 flex items-center justify-center">

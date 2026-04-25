@@ -15,7 +15,7 @@ export default function MDPPage() {
       <BenefitsHoverSection />
       <div className="my-6"></div>
       <ReadyToGetStartedSection />
-      <EinsteinAccordionSection service={"faq"} />
+      <EinsteinAccordionSection service={"faq"} category="Modern Data Platforms" />
     </>
   );
 }

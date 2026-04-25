@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function DigitalEngineeringHero({bgImage, title}) {
+export default function DigitalEngineeringHero({bgImage, title, desc = ""}) {
 
   const imageMap = {
     "DE": "/images/homeCarousel1.png",
@@ -11,8 +11,8 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "AD": "/images/applicationDevelopmentHero.png",
     "LC": "/images/lowCodeHero.jpg",
     "AZ": "/images/azureHero.jpg",
-    "SC": "/images/enterprisePlatformHero.png",
-    "IM": "/images/dataAnalyticsHero.png",
+    "SC": "/images/strategyConsultingHero.png",
+    "IM": "/images/implementationHero.png",
     "MS": "/images/managedServicesHero.jpg",
     "CM": "/images/azureHero.jpg",
     "AI": "/images/aiHero.jpg",
@@ -21,7 +21,7 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "MDP": "/images/latestInsights2.png",
     "DG": "/images/applicationDevelopmentHero.png",
     "OR": "/images/oracleHero.jpg",
-    "SF": "/images/azureHero.jpg",
+    "SF": "/images/salesforceHero.png",
     "SSC": "/images/lowCodeHero.jpg",
     "SFSC": "/images/enterprisePlatformHero.png",
     "SMC": "/images/dataVisualizationHero.jpg",
@@ -31,7 +31,7 @@ export default function DigitalEngineeringHero({bgImage, title}) {
     "AA": "/images/analyticsAiHero.jpg",
     "SN": "/images/servicenowHero.jpg",
     "GS": "/images/lowCodeHero.jpg",
-    "QE": "/images/digitalEngineeringHero.png",
+    "QE": "/images/qualityEngineeringHero.png",
     "GAI": "/images/genaiHero.jpg",
   };
 
@@ -77,6 +77,10 @@ export default function DigitalEngineeringHero({bgImage, title}) {
         <h1 className="text-white text-4xl md:text-6xl font-normal">
           {title}
         </h1>
+
+        {desc && (
+          <p className="text-white text-lg md:text-xl font-normal mt-8 max-w-2xl">{desc}</p>
+        )}
       </motion.div>
     </section>
   );

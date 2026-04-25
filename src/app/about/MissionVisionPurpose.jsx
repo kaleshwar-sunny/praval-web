@@ -6,19 +6,19 @@ export default function MissionVisionPurpose() {
     {
       title: "Our Mission",
       description:
-        "To empower businesses by providing world-class technology services.",
+        "We build trusted tech partnerships that deepen over time, helping both clients and our team grow together.",
       image: "/images/mission.png",
     },
     {
       title: "Our Vision",
       description:
-        "To enable success through technology excellence.",
+        "To grow alongside the clients we serve and the people who make that possible.",
       image: "/images/vision.png",
     },
     {
-      title: "Our Purpose",
+      title: "Our Values",
       description:
-        "Innovation, Quality, Unity, Equality, Integrity, Sustainability.",
+        "We grow without compromising people, culture, or quality. Depth always matters more than speed.",
       image: "/images/purpose.png",
     },
   ];

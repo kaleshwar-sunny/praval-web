@@ -8,6 +8,7 @@ const blogs = [
     description:
       "Transition to a digital enterprise with modern application development and transformation.",
     image: "/images/blog-app-dev.png",
+    navigate: "/blogs/digital-acceleration-blog"
   },
   {
     title: "Salesforce",
@@ -15,29 +16,34 @@ const blogs = [
       "Future-proof your business with automation and smart decision-making",
     image: "/images/blog-salesforce.png",
     tall: true,
+    navigate: "/blogs/choose-ai"
   },
   {
     title: "ServiceNow",
     description: "Enable trust and transparency",
     image: "/images/blog-servicenow.png",
+    navigate: "/blogs/intranet"
   },
   {
     title: "Cloud",
     description:
       "Experience easy, secure, and faster migration to cloud",
     image: "/images/blog-cloud.png",
+    navigate: "/blogs/bicepBlog"
   },
   {
     title: "Data & Analytics",
     description: "Make informed and data-driven decisions",
     image: "/images/blog-data.png",
     tall: true,
+    navigate: "/blogs/choose-ai"
   },
   {
     title: "General",
     description:
       "Data conversion, digitization and management",
     image: "/images/blog-general.png",
+    navigate: "/blogs/digital-acceleration-blog"
   },
 ];
 
@@ -74,7 +80,7 @@ export default function LatestBlogsGrid() {
                   {blog.description}
                 </p>
                 <span className="inline-flex items-center gap-2" style={{cursor: "pointer"}}>
-                  Read More →
+                   <Link href={blog.navigate}>Read More →</Link>
                 </span>
               </div>
             </div>

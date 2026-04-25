@@ -110,14 +110,14 @@ export default function CareersShowcase() {
       </div>
 
       {/* ===================== 3. CTA SECTION ===================== */}
-      <div className="flex flex-col items-center justify-center py-12 gap-4">
+      <div className="flex flex-col items-center justify-center pb-8 gap-4">
         
         {/* Dropbox Icon */}
-        <img
+        {/* <img
           src="/images/dropbox-icon.png"
           alt="icon"
           className="w-12 h-12"
-        />
+        /> */}
 
         {/* Button */}
         <Link href="https://pravaltech.zohorecruit.in/jobs/Careers/" target="_blank">

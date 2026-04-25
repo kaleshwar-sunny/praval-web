@@ -11,9 +11,9 @@ export default function CloudModernizationPage() {
       <DigitalEngineeringHero bgImage={"CM"} title={"Cloud Modernization"}/>
       <OverviewSection service={"CM"}/>
       <StrategyAccordion service={"CM"} />
-      <CloudInfrastructureSection />
-      <ReadyToGetStartedSection />
+      {/* <CloudInfrastructureSection /> */}
       <WhyChooseUsSlider />
+      <ReadyToGetStartedSection />
     </>
   );
 }

@@ -72,8 +72,8 @@ export default function CustomerSuccess() {
           <p className="text-primaryText">
             Our superpower lies in our unwavering passion for technology and
             customer success. With approximately more than two years of
-            experience in building digital engineering, data analytics and
-            enterprise platforms solutions.
+            experience in building digital acceleration, data analytics and
+            platforms solutions.
           </p>
         </div>
 

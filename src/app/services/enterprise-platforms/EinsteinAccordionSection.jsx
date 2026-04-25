@@ -5,15 +5,15 @@ import Image from "next/image";
 
 
 
-export default function EinsteinAccordionSection({ service = "default" }) {
+export default function EinsteinAccordionSection({ service = "default", category = ""}) {
 
   const SERVICES_MAP = {
     faq: {
       accordionData : [
         {
-          title: "What is strategy consulting?",
+          title: `What is  ${category ? category : "strategy consulting"} ?`,
           content:
-            "Strategy consulting involves working with experts to create actionable plans that align your business vision with achievable goals.",
+            `${category ? category : "Strategy consulting"} involves working with experts to create actionable plans that align your business vision with achievable goals.`,
         },
         {
           title: "How does data strategy development help my business?",

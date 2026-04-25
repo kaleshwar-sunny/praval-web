@@ -16,7 +16,7 @@ export default function dataGovernancePage() {
       <BenefitsHoverSection />
       <WhyChooseUsSlider />
       <ReadyToGetStartedSection />
-      <EinsteinAccordionSection service={"faq"} />
+      <EinsteinAccordionSection service={"faq"} category={"Data Governance"} />
     </>
   );
 }

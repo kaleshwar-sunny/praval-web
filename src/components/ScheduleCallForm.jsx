@@ -43,27 +43,43 @@ export default function ScheduleCallForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const validatePhone = (phone) => {
+const validatePhone = (phone) => {
     // Remove any whitespace
     const cleaned = phone.trim();
     
     // Check if empty
     if (!cleaned) return false;
     
-    // Check if it contains only numbers
-    const numbersOnlyRegex = /^\d+$/;
+    // Check if it contains only allowed characters (digits, spaces, hyphens, and + at the start)
+    const allowedCharsRegex = /^\+?[\d\s\-]+$/;
     
-    if (!numbersOnlyRegex.test(cleaned)) {
-      return false; // Contains special characters or letters
+    if (!allowedCharsRegex.test(cleaned)) {
+      return false; // Contains invalid characters
     }
     
+    // Remove spaces and hyphens to count actual digits
+    const digitsOnly = cleaned.replace(/[\s\-]/g, '');
+    
+    // Remove the + sign for counting if present (it should only be at the start)
+    const digits = digitsOnly.startsWith('+') ? digitsOnly.substring(1) : digitsOnly;
+    
     // Check minimum length (at least 7 digits)
-    if (cleaned.length < 7) {
+    if (digits.length < 7) {
       return false;
     }
     
     // Check maximum length (at most 15 digits)
-    if (cleaned.length > 15) {
+    if (digits.length > 15) {
+      return false;
+    }
+    
+    // Ensure + is only at the beginning if present
+    if (cleaned.includes('+') && cleaned.indexOf('+') !== 0) {
+      return false;
+    }
+    
+    // Ensure no multiple consecutive spaces or hyphens
+    if (cleaned.includes('  ') || cleaned.includes('--')) {
       return false;
     }
     

@@ -1,24 +1,25 @@
 export default function OverviewSection({service = ""}) {
 
   const titles = {
-    AD: 'Transforming Data into Actionable Insights',
-    SC: 'Transform Your Vision Into Reality With Our Strategy Consulting Services',
+    AD: 'End-to-End Custom Application Development Services',
+    SC: 'Transform Your Vision Into Reality With Our Data Strategy Consulting Services',
     IM: 'Reliable, High-Impact Solutions from Start to Finish',
     MS: 'Focus on What You Do Best, Let Us Handle the Data',
-    CM: 'Leading the Way with Innovation: Technology-Focused Expertise',
+    CM: 'Cloud Data Modernization Services Built for Modern Enterprises',
     AI: 'Transforming Data into Actionable Insights',
     RT: 'Stay Agile with Every Moment’s Insight',
     DV: 'Data Visualization - Bringing Your Data to Life',
-    MDP: 'Modern Data Platforms & Warehouses – Built for Tomorrow',
+    MDP: 'Enterprise Data Governance Services Built on Trust',
     DG: 'Modern Data Platforms & Warehouses – Built for Tomorrow',
     ML: 'Praval’s MuleSoft Consulting: Leading Integration Experts',
     AA: 'Empower Your Business with Next-Generation AI-Driven Analytics',
     SN: 'Empowering Business Transformation with ServiceNow',
+    LC: 'Low Code No Code Development Services',
     default: 'Overview'
   };
 
   const contentMap = {
-    "DE": `Digital Engineering goes beyond adopting new technologies; it requires a strategic approach. In order to succeed, businesses need to comprehend their long-term goals, adapt their digital strategies accordingly, and execute them in alignment with industry norms or even exceed them. By doing so, companies can establish themselves as leaders in their respective fields and exceed customer expectations.`,
+    "DE": `Digital Acceleration goes beyond adopting new technologies; it requires a strategic approach. In order to succeed, businesses need to comprehend their long-term goals, adapt their digital strategies accordingly, and execute them in alignment with industry norms or even exceed them. By doing so, companies can establish themselves as leaders in their respective fields and exceed customer expectations.`,
     "DA": `Unlock the power of your data and turn your business goals into reality with our comprehensive suite of services and cutting-edge technology solutions. We combine strategy, implementation, and managed services to ensure you achieve unparalleled results. Whether you’re modernizing your cloud infrastructure, delving into AI and machine learning, or enhancing your data governance, we’ve got you covered.`,
     "EP": `Praval’s ERP solutions are designed to streamline business processes, enhance operational efficiency, and drive growth. Our comprehensive approach ensures seamless integration and optimization of your enterprise resources.`,
     "AD": `At Praval, we specialise in delivering end-to-end implementation solutions designed to meet your specific business needs. From the initial stages of design to seamless deployment, we ensure every phase of the process is handled with precision and care. Our commitment to tailored, scalable systems ensures your business operations remain robust and future-proof. Our solutions empower businesses to gain a deeper understanding of their operations, customers, and market dynamics, enabling them to stay ahead of the competition. Here’s how our expertise can revolutionize your approach to data-driven decision-making.`,

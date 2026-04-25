@@ -10,7 +10,7 @@ import IndustriesExpandable from "./IndustriesExpandable";
 export default function DigitalEngineeringPage() {
   return (
     <>
-      <DigitalEngineeringHero bgImage={"DE"} title={"Digital Acceleration"}/>
+      <DigitalEngineeringHero bgImage={"DE"} title={"Digital Acceleration"} desc={"Outcome-driven digital acceleration designed to modernize your core and deliver real business impact—without disruption."}/>
       <OverviewSection service={"DE"}/>
       <ServicesStack service={"DE"} />
       <CapabilitiesTabs />

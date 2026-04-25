@@ -7,7 +7,7 @@ import WhyChooseUsSlider from "../../digital-acceleration/WhyChooseUsSlider";
 export default function SalesforcePage() {
   return (
     <>
-      <DigitalEngineeringHero bgImage={"SF"} title={"Salesforce"}/>
+      <DigitalEngineeringHero bgImage={"SF"} title={"Salesforce"} desc={"Unify customer data and unlock AI-driven insights to deliver personalized experiences at scale."}/>
       <OverviewSection service={"SF"}/>
       <ServicesStack service={"SF"}/>
       <ReadyToGetStartedSection />

@@ -7,21 +7,21 @@ const slides = [
   {
     title: "Digital Acceleration",
     description:
-      "Digital is not the new, but the transformation is still. Digital capabilities accelerate business growth & allow organizations to build beyond.",
+      "Outcome-driven digital acceleration designed to modernize your core and deliver real business impact—without disruption.",
     image: "/images/homeCarousel1.png",
     link: "/services/digital-acceleration",
   },
   {
     title: "Data Analytics",
     description:
-      "Decision making backed by sound insights is the crucial differentiator for any business success. Praval offers broader expertise on end-to-end data analytic solutions.",
+      "From data engineering to advanced analytics, we deliver end-to-end solutions that empower your teams to make faster, smarter, and more confident decisions.",
     image: "/images/homeCarousel2.png",
     link: "/services/data-analytics",
   },
   {
     title: "Platforms",
     description:
-      "Globally with the emergence of new work patterns post Covid-19, it is essential for organizations to adopt and enable their workforce with the digital infrastructure.",
+      "We enable organizations to optimize and extend their platform investments — improving efficiency, enhancing user experience, and delivering consistent performance at scale.",
     image: "/images/homeCarousel3.png",
     link: "/services/enterprise-platforms",
   },
