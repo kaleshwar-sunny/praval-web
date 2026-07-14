@@ -35,6 +35,11 @@ const blogsData = [
     image: "/images/blog6.png",
     link: "/case-study/npca"
   },
+  {
+    title: "LAST-MILE OPERATIONS COPILOT",
+    image: "/images/blog6.png",
+    link: "/case-studies/gen-ai"
+  },
 ];
 
 export default function CaseStudiesLayout() {
