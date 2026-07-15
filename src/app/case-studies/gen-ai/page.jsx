@@ -29,8 +29,11 @@ export default function LastMileOperationsCopilotCaseStudy() {
     document.body.removeChild(link);
   };
 
+  console.log("COMPONENT RENDERED");
+
   return (
     <div className="w-full">
+      
       {/* HERO SECTION */}
       <div className="relative w-full">
         {/* Hero Section with solid black background */}
@@ -53,9 +56,9 @@ export default function LastMileOperationsCopilotCaseStudy() {
           </div>
 
           {/* Floating Cards - positioned absolutely over the hero */}
-          <div className="hidden md:block absolute bottom-0 left-0 right-0 transform translate-y-1/2">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-1/2">
+            <div className="mt-8 md:mt-32">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Card 1 */}
                 <div className="bg-[#0F72B1] rounded-2xl p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out">
                   <div className="flex items-center justify-center gap-3">
@@ -104,7 +107,7 @@ export default function LastMileOperationsCopilotCaseStudy() {
       </div>
 
       {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-28 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 md:pt-48 pt-4 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* LEFT CONTENT */}
         <div className="md:col-span-2 space-y-10">
           {/* Real Problem + Scope cards */}

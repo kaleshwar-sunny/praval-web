@@ -84,7 +84,6 @@ export default function CaseStudiesLayout() {
           {/* Scrollable Area */}
           <div className="max-h-[600px] overflow-y-auto no-scrollbar pr-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              
               {blogsData.map((blog, index) => (
                 <div key={index} className="space-y-3 mb-6">
                   
