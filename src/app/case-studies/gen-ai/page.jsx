@@ -29,10 +29,8 @@ export default function LastMileOperationsCopilotCaseStudy() {
     document.body.removeChild(link);
   };
 
-  console.log("COMPONENT RENDERED");
-
   return (
-    <div className="w-full">
+    <div className="w-full bg-red-500b">
       
       {/* HERO SECTION */}
       <div className="relative w-full">
