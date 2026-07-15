@@ -30,7 +30,7 @@ export default function LastMileOperationsCopilotCaseStudy() {
   };
 
   return (
-    <div className="w-full bg-red-500b">
+    <div className="w-full">
       
       {/* HERO SECTION */}
       <div className="relative w-full">
@@ -54,9 +54,9 @@ export default function LastMileOperationsCopilotCaseStudy() {
           </div>
 
           {/* Floating Cards - positioned absolutely over the hero */}
-          <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-1/2">
-            <div className="mt-8 md:mt-32">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="absolute bottom-0 left-0 right-0 translate-y-1/2">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* Card 1 */}
                 <div className="bg-[#0F72B1] rounded-2xl p-6 transform hover:scale-105 transition-transform duration-300 ease-in-out">
                   <div className="flex items-center justify-center gap-3">
@@ -105,7 +105,7 @@ export default function LastMileOperationsCopilotCaseStudy() {
       </div>
 
       {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 md:pt-48 pt-4 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-28 mt-20 md:mt-28 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* LEFT CONTENT */}
         <div className="md:col-span-2 space-y-10">
           {/* Real Problem + Scope cards */}
@@ -453,18 +453,6 @@ export default function LastMileOperationsCopilotCaseStudy() {
                 </li>
               ))}
             </ul>
-            <>
-              <button onClick={() => setShowModal(true)} className="bg-[#0F72B1] text-white text-sm font-medium px-6 py-3 rounded-lg hover:bg-[#0d62a0] transition-colors cursor-pointer">
-                Download
-              </button>
-              <DownloadModal
-                open={showModal}
-                onClose={() => setShowModal(false)}
-                title="Sales were up. Margin was leaking."
-                pdfUrl="/pdfs/FMCG-Case-Study.pdf"
-                fileName="FMCG-Case-Study.pdf"
-              />
-            </>
           </div>
         </div>
       </section>
