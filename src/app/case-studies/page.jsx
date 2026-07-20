@@ -6,6 +6,21 @@ import Image from "next/image";
 
 const blogsData = [
   {
+    title: "Last-Mile Operations Copilot",
+    image: "/images/blog6.png",
+    link: "/case-studies/gen-ai"
+  },
+  {
+    title: "Healthcare",
+    image: "/images/blog6.png",
+    link: "/case-studies/healthcare"
+  },
+  {
+    title: "Microsoft Copilot",
+    image: "/images/blog6.png",
+    link: "/case-studies/microsoftCopilot"
+  },
+  {
     title: "Margin Leakage",
     image: "/images/blog1.png",
     link: "/case-studies/retail"
@@ -35,11 +50,16 @@ const blogsData = [
     image: "/images/blog6.png",
     link: "/case-study/npca"
   },
-  {
-    title: "LAST-MILE OPERATIONS COPILOT",
-    image: "/images/blog6.png",
-    link: "/case-studies/gen-ai"
-  },
+  // {
+  //   title: "Financial Services",
+  //   image: "/images/blog6.png",
+  //   link: "/case-studies/financialServices"
+  // },
+  // {
+  //   title: "Insurance",
+  //   image: "/images/blog6.png",
+  //   link: "/case-studies/insurance"
+  // },
 ];
 
 export default function CaseStudiesLayout() {

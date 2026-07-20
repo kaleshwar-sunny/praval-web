@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import DownloadModal from "../download-popup";
 
 const quickLinks = [
   { id: "the-challenge", label: "The Challenge" },
@@ -18,15 +17,6 @@ export default function LastMileOperationsCopilotCaseStudy() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
-
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/pdfs/FMCG-Case-Study.pdf";
-    link.download = "FMCG-Case-Study.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -105,7 +95,7 @@ export default function LastMileOperationsCopilotCaseStudy() {
       </div>
 
       {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-28 mt-20 md:mt-28 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-40 pb-16 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* LEFT CONTENT */}
         <div className="md:col-span-2 space-y-10">
           {/* Real Problem + Scope cards */}
