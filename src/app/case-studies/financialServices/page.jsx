@@ -21,8 +21,8 @@ export default function FinancialServicesCaseStudy() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/pdfs/FMCG-Case-Study.pdf";
-    link.download = "FMCG-Case-Study.pdf";
+    link.href = "/pdfs/Financial-Services-Case-Study.pdf";
+    link.download = "Financial-Services-Case-Study.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -252,8 +252,8 @@ export default function FinancialServicesCaseStudy() {
                 open={showModal}
                 onClose={() => setShowModal(false)}
                 title="Every incident had a ticket. The same ones kept wrong."
-                pdfUrl="/pdfs/FMCG-Case-Study.pdf"
-                fileName="FMCG-Case-Study.pdf"
+                pdfUrl="/pdfs/Financial-Services-Case-Study.pdf"
+                fileName="Financial-Services-Case-Study.pdf"
               />
             </>
           </div>

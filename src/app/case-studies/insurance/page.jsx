@@ -21,8 +21,8 @@ export default function InsuranceCaseStudy() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/pdfs/FMCG-Case-Study.pdf";
-    link.download = "FMCG-Case-Study.pdf";
+    link.href = "/pdfs/Insurance-Case-Study.pdf";
+    link.download = "Insurance-Case-Study.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -257,8 +257,8 @@ export default function InsuranceCaseStudy() {
                 open={showModal}
                 onClose={() => setShowModal(false)}
                 title="Every claim moved at the speed of the wrong."
-                pdfUrl="/pdfs/FMCG-Case-Study.pdf"
-                fileName="FMCG-Case-Study.pdf"
+                pdfUrl="/pdfs/Insurance-Case-Study.pdf"
+                fileName="Insurance-Case-Study.pdf"
               />
             </>
           </div>

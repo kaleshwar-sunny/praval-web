@@ -12,12 +12,12 @@ const blogsData = [
   },
   {
     title: "Healthcare",
-    image: "/images/blog6.png",
+    image: "/images/Healthcare.svg",
     link: "/case-studies/healthcare"
   },
   {
     title: "Microsoft Copilot",
-    image: "/images/blog6.png",
+    image: "/images/Microsoft-copilot.svg",
     link: "/case-studies/microsoftCopilot"
   },
   {

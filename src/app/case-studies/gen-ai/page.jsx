@@ -427,7 +427,7 @@ export default function LastMileOperationsCopilotCaseStudy() {
         </div>
 
         {/* RIGHT SIDEBAR */}
-        <div className="hidden md:block">
+        <div className="block">
           <div className="sticky top-20 border-l border-gray-300 pl-6">
             <h3 className="text-xl font-semibold mb-4">Content Quick Links</h3>
             <ul className="space-y-4 text-[#0F72B1] text-sm mb-8">
