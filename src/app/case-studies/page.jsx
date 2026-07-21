@@ -21,6 +21,16 @@ const blogsData = [
     link: "/case-studies/microsoftCopilot"
   },
   {
+    title: "Financial Services",
+    image: "/images/Financial-services.svg",
+    link: "/case-studies/financialServices"
+  },
+  {
+    title: "Insurance",
+    image: "/images/Insurance.svg",
+    link: "/case-studies/insurance"
+  },
+  {
     title: "Margin Leakage",
     image: "/images/blog1.png",
     link: "/case-studies/retail"
@@ -50,16 +60,7 @@ const blogsData = [
     image: "/images/blog6.png",
     link: "/case-study/npca"
   },
-  // {
-  //   title: "Financial Services",
-  //   image: "/images/blog6.png",
-  //   link: "/case-studies/financialServices"
-  // },
-  // {
-  //   title: "Insurance",
-  //   image: "/images/blog6.png",
-  //   link: "/case-studies/insurance"
-  // },
+  
 ];
 
 export default function CaseStudiesLayout() {
