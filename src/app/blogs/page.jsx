@@ -38,25 +38,25 @@ const blogsData = [
   {
     title: "UI Automation vs AI Automation",
     desc: "The Evolution of Software Testing in the Age of Intelligence",
-    image: "/images/blog1.png",
+    image: "/images/blogs/ui&ai-automation-image.svg",
     link: "/blogs/ui&ai-automation"
   },
   {
     title: "Sustainable Quality Engineering",
     desc: "SQE is not a tool, framework, or process. It is a mindset and operating model that ensures quality practices remain effective, scalable, and resilient over time.",
-    image: "/images/blog1.png",
+    image: "/images/blogs/sqe-image.svg",
     link: "/blogs/sqe"
   },
   {
     title: "Where AI Testing Tools Still Fail",
     desc: "Can AI testing tools truly understand software quality the way an experienced human tester does?",
-    image: "/images/blog1.png",
+    image: "/images/blogs/where-ai-testing-fail-image.svg",
     link: "/blogs/where-ai-testing-fail"
   },
   {
     title: "Scalable QA Ecosystem with License-Free Automation Tools",
     desc: "Instead of investing in costly licenses, the team decided to build a modern Quality Engineering ecosystem using open-source and license-free automation tools.",
-    image: "/images/blog1.png",
+    image: "/images/blogs/scalable-qa-image.svg",
     link: "/blogs/scalable-qa"
   },
   {
